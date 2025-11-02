@@ -5,8 +5,11 @@ using TMPro;
 
 public class UIController : MonoBehaviour
 {
-    [Header("UI")]
+    [Header("UI time")]
     public TMP_Text timeText;
+    
+    [Header("UI Bar")]
+    public Slider drunkSlider;
 
     [Header("Config")]
     [SerializeField] private int startHour = 0;      // 00:00
@@ -23,6 +26,10 @@ public class UIController : MonoBehaviour
     private float endMinutes;
     private bool running;
 
+    private float sliderValue;
+    [SerializeField] Drinkable drinkable;
+    
+    
     private void OnEnable()
     {
         endMinutes = endHour * 60f;
@@ -30,20 +37,25 @@ public class UIController : MonoBehaviour
         UpdateLabel();
         running = autoStart;
     }
+    
 
     private void Update()
     {
+        sliderValue = drinkable.GetComponent<Drinkable>().Drunk;
+        
         if (!running) return;
 
         float deltaMinutes = Time.deltaTime * minutesPerSecond * Mathf.Max(0f, timeScale);
         minutesSinceMidnight = Mathf.Min(minutesSinceMidnight + deltaMinutes, endMinutes);
 
         UpdateLabel();
-
+        SliderUpdate(sliderValue/100f);
+        
         if (minutesSinceMidnight >= endMinutes)
         {
             running = false;
         }
+        
     }
 
     private void UpdateLabel()
@@ -64,6 +76,14 @@ public class UIController : MonoBehaviour
         }
 
         timeText.text = $"{hours:00}:{snappedMinutes:00} AM";
+    }
+    
+    private void SliderUpdate(float value)
+    {
+        if (drunkSlider != null)
+        {
+            drunkSlider.value = value;
+        }
     }
 
     // Controls
