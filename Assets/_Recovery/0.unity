@@ -15814,7 +15814,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 685217867}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
   m_Name: 
@@ -27952,25 +27952,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1061352329}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 35b68053a63ea2343842c7174e2937e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BandPerformanceManager
-  speakingEvents:
-  - Guid:
-      Data1: -1004948556
-      Data2: 1321641443
-      Data3: 932547006
-      Data4: 554974839
-    Path: event:/Speaking
-  musicEvents:
-  - Guid:
-      Data1: -1130236735
-      Data2: 1319936303
-      Data3: 151720346
-      Data4: -865841087
-    Path: event:/Music
+  speakingEvents: []
+  musicEvents: []
 --- !u!4 &1068520751 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7036039716655484207, guid: dfa9bdd46ac7fb04bb57b646ee2b3a0e, type: 3}
