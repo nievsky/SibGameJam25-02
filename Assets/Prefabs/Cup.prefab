@@ -117,6 +117,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DrinkComponent
   DrinkSeconds: 5
+  MaxDrinkSeconds: 5
 --- !u!1001 &4816669264668528196
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -177,6 +178,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 46c1130406ad82b449d229acf3a295ac, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 46c1130406ad82b449d229acf3a295ac, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 1e295dedd65e8ad4d9bae4531ee87348, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 46c1130406ad82b449d229acf3a295ac, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: d82c95e9d69d5a64d9bc2ea05352f10e, type: 2}
     - target: {fileID: 919132149155446097, guid: 46c1130406ad82b449d229acf3a295ac, type: 3}
       propertyPath: m_Name
       value: beer
@@ -184,10 +197,40 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 46c1130406ad82b449d229acf3a295ac, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2115902303315695515}
   m_SourcePrefab: {fileID: 100100000, guid: 46c1130406ad82b449d229acf3a295ac, type: 3}
 --- !u!4 &4995202616333003183 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 46c1130406ad82b449d229acf3a295ac, type: 3}
+  m_PrefabInstance: {fileID: 4816669264668528196}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5627624853148349205 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 46c1130406ad82b449d229acf3a295ac, type: 3}
+  m_PrefabInstance: {fileID: 4816669264668528196}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2115902303315695515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5627624853148349205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffbfabb2ae39b3a419a4793d6e4bfb48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ChangeColor
+  targetRenderer: {fileID: 6132119890137354944}
+  parentWithValues: {fileID: 4421173351682370359}
+  drinkSecondsName: DrinkSeconds
+  maxDrinkSecondsName: MaxDrinkSeconds
+  colorPropertyName: _BaseColor
+--- !u!23 &6132119890137354944 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: 46c1130406ad82b449d229acf3a295ac, type: 3}
   m_PrefabInstance: {fileID: 4816669264668528196}
   m_PrefabAsset: {fileID: 0}
