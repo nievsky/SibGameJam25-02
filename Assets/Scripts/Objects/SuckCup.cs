@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class SuckCup : MonoBehaviour
@@ -5,6 +6,13 @@ public class SuckCup : MonoBehaviour
     [SerializeField] private string fillTag = "Dragable";
     [SerializeField] private float fillRatePerSecond = 1f;
     [SerializeField] private bool searchInParentsIfMissing = true;
+
+    // Push-on-empty settings
+    [Header("Push on empty")]
+    [SerializeField] private Transform player; // assign in Inspector
+    [SerializeField] private float pushImpulse = 5f;
+
+    private readonly HashSet<DrinkComponent> pushedOnEmpty = new HashSet<DrinkComponent>();
 
     private void OnTriggerStay(Collider other)
     {
@@ -14,28 +22,37 @@ public class SuckCup : MonoBehaviour
         if (!TryGetDrinkComponent(other, out var drink))
             return;
 
-        SuckOverTime(drink, Time.deltaTime);
+        var rb = other.attachedRigidbody;
+        if (rb == null && searchInParentsIfMissing)
+            rb = other.GetComponentInParent<Rigidbody>();
+
+        SuckOverTime(drink, rb, Time.deltaTime);
     }
-    
+
     private void OnCollisionStay(Collision collision)
     {
-        if (collision != null && (collision.collider.CompareTag(fillTag) || collision.gameObject.CompareTag(fillTag)))
-        {
-            if (TryGetDrinkComponent(collision.collider, out var drink))
-            {
-                SuckOverTime(drink, Time.deltaTime);
-                return;
-            }
-        }
+        if (collision == null)
+            return;
+
+        var col = collision.collider;
+        if (!(col != null && (col.CompareTag(fillTag) || collision.gameObject.CompareTag(fillTag))))
+            return;
+
+        if (!TryGetDrinkComponent(col, out var drink))
+            return;
+
+        var rb = collision.rigidbody ?? col.attachedRigidbody;
+        if (rb == null && searchInParentsIfMissing)
+            rb = col.GetComponentInParent<Rigidbody>();
+
+        SuckOverTime(drink, rb, Time.deltaTime);
     }
 
     private bool TryGetDrinkComponent(Collider other, out DrinkComponent drink)
     {
-        // Directly on the collider's GameObject
         if (other.TryGetComponent(out drink))
             return true;
 
-        // Optionally search hierarchy if not directly present
         if (searchInParentsIfMissing)
         {
             drink = other.GetComponentInParent<DrinkComponent>();
@@ -48,15 +65,39 @@ public class SuckCup : MonoBehaviour
         return false;
     }
 
-    private void SuckOverTime(DrinkComponent drink, float deltaTime)
+    private void SuckOverTime(DrinkComponent drink, Rigidbody targetRb, float deltaTime)
     {
         if (drink == null || deltaTime <= 0f)
             return;
 
-        float target = 0f;
-        if (drink.DrinkSeconds <= target)
+        float current = drink.DrinkSeconds;
+        if (current <= 0f)
             return;
 
-        drink.DrinkSeconds = Mathf.Max(target, drink.DrinkSeconds - fillRatePerSecond * deltaTime);
+        float newValue = Mathf.Max(0f, current - fillRatePerSecond * deltaTime);
+        drink.DrinkSeconds = newValue;
+
+        if (newValue <= 0f && !pushedOnEmpty.Contains(drink))
+        {
+            pushedOnEmpty.Add(drink);
+            PushCupTowardPlayer(targetRb);
+        }
+        else if (newValue > 0f && pushedOnEmpty.Contains(drink))
+        {
+            // Allow push again if refilled later
+            pushedOnEmpty.Remove(drink);
+        }
+    }
+
+    private void PushCupTowardPlayer(Rigidbody targetRb)
+    {
+        if (targetRb == null || player == null)
+            return;
+
+        Vector3 dir = (player.position - targetRb.position).normalized;
+        if (dir.sqrMagnitude < 1e-6f)
+            return;
+
+        targetRb.AddForce(dir * pushImpulse, ForceMode.Impulse);
     }
 }
