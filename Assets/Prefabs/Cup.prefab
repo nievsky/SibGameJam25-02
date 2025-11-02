@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6002115623840217178}
   - component: {fileID: 2279859746255100492}
   - component: {fileID: 3586200951660229429}
+  - component: {fileID: 7844248523985471818}
   m_Layer: 7
   m_Name: Cup
   m_TagString: Dragable
@@ -103,6 +104,19 @@ MonoBehaviour:
   minTorque: 2
   maxTorque: 6
   pairCooldown: 0.1
+--- !u!114 &7844248523985471818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4676939997810896100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 966f6533ba2742b4ea9af8703f923f51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DrinkComponent
+  DrinkSeconds: 5
 --- !u!1001 &4816669264668528196
 PrefabInstance:
   m_ObjectHideFlags: 0
