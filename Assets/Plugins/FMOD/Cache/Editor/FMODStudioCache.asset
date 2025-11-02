@@ -42,10 +42,10 @@ MonoBehaviour:
   Path: F:/FMOD Studio 2.03.01/projects/SibGameJam25/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638977065443041755
+  lastModified: 638977092118944951
   FileSizes:
   - Name: Desktop
-    Value: 818
+    Value: 854
   Exists: 1
 --- !u!114 &-6861114019806570692
 MonoBehaviour:
@@ -62,10 +62,10 @@ MonoBehaviour:
   Path: F:/FMOD Studio 2.03.01/projects/SibGameJam25/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638977065443026743
+  lastModified: 638977092118929937
   FileSizes:
   - Name: Desktop
-    Value: 4398624
+    Value: 4582592
   Exists: 1
 --- !u!114 &-2175831726605152203
 MonoBehaviour:
@@ -112,15 +112,45 @@ MonoBehaviour:
   EditorEvents:
   - {fileID: -2175831726605152203}
   - {fileID: -8202146897962866366}
+  - {fileID: 2433652789177568236}
   EditorParameters: []
   MasterBanks:
   - {fileID: -6861114019806570692}
   StringsBanks:
   - {fileID: -7830978184982537184}
   cacheVersion: 131856
-  cacheTime: 638977065443041755
+  cacheTime: 638977092118944951
   SerializableEventsDict:
   - key: event:/Speaking
     index: 0
   - key: event:/Music
     index: 1
+  - key: event:/Crowd
+    index: 2
+--- !u!114 &2433652789177568236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Crowd
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Crowd
+  Guid:
+    Data1: -1604832374
+    Data2: 1297407077
+    Data3: -1929377095
+    Data4: 457627929
+  Banks:
+  - {fileID: -6861114019806570692}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 14400

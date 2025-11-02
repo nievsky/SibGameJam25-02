@@ -43,24 +43,30 @@ public class BandPerformanceManager : MonoBehaviour
     private IEnumerator PlayAndWaitForEvent(EventReference eventRef)
     {
         currentEvent = RuntimeManager.CreateInstance(eventRef);
-
-        // ✅ Set 3D attributes to the GameObject's transform
         currentEvent.set3DAttributes(RuntimeUtils.To3DAttributes(transform));
-
         currentEvent.start();
 
-        // Wait until event stops
+
+        PLAYBACK_STATE state;
+        do
+        {
+            currentEvent.getPlaybackState(out state);
+            yield return null;
+        } while (state == PLAYBACK_STATE.STARTING);
+
+
         bool isPlaying = true;
         while (isPlaying)
         {
-            currentEvent.getPlaybackState(out PLAYBACK_STATE state);
+            currentEvent.getPlaybackState(out state);
             if (state == PLAYBACK_STATE.STOPPED || state == PLAYBACK_STATE.STOPPING)
-            {
                 isPlaying = false;
-            }
             yield return null;
         }
 
         currentEvent.release();
+
+
+        yield return new WaitForSeconds(1f);
     }
 }
