@@ -7,10 +7,10 @@ using FMOD.Studio;
 public class BandPerformanceManager : MonoBehaviour
 {
     [Header("FMOD Events")]
-    [Tooltip("Speaking")]
+    [Tooltip("List of 'speaking' events (band chatter before each song).")]
     public List<EventReference> speakingEvents;
 
-    [Tooltip("Music")]
+    [Tooltip("List of 'music' events (songs to play).")]
     public List<EventReference> musicEvents;
 
     private EventInstance currentEvent;
@@ -43,30 +43,24 @@ public class BandPerformanceManager : MonoBehaviour
     private IEnumerator PlayAndWaitForEvent(EventReference eventRef)
     {
         currentEvent = RuntimeManager.CreateInstance(eventRef);
+
+
         currentEvent.set3DAttributes(RuntimeUtils.To3DAttributes(transform));
+
         currentEvent.start();
-
-
-        PLAYBACK_STATE state;
-        do
-        {
-            currentEvent.getPlaybackState(out state);
-            yield return null;
-        } while (state == PLAYBACK_STATE.STARTING);
 
 
         bool isPlaying = true;
         while (isPlaying)
         {
-            currentEvent.getPlaybackState(out state);
+            currentEvent.getPlaybackState(out PLAYBACK_STATE state);
             if (state == PLAYBACK_STATE.STOPPED || state == PLAYBACK_STATE.STOPPING)
+            {
                 isPlaying = false;
+            }
             yield return null;
         }
 
         currentEvent.release();
-
-
-        yield return new WaitForSeconds(1f);
     }
 }

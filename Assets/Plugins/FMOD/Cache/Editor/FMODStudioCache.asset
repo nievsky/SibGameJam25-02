@@ -26,7 +26,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 50
-  Length: 89056
+  Length: 90000
 --- !u!114 &-7830978184982537184
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42,7 +42,7 @@ MonoBehaviour:
   Path: F:/FMOD Studio 2.03.01/projects/SibGameJam25/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638977092118944951
+  lastModified: 638977131782402072
   FileSizes:
   - Name: Desktop
     Value: 854
@@ -62,7 +62,7 @@ MonoBehaviour:
   Path: F:/FMOD Studio 2.03.01/projects/SibGameJam25/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638977092118929937
+  lastModified: 638977131782387050
   FileSizes:
   - Name: Desktop
     Value: 4582592
@@ -93,7 +93,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 50
-  Length: 5400
+  Length: 7850
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119,7 +119,7 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: -7830978184982537184}
   cacheVersion: 131856
-  cacheTime: 638977092118944951
+  cacheTime: 638977131782402072
   SerializableEventsDict:
   - key: event:/Speaking
     index: 0
