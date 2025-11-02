@@ -16,8 +16,17 @@ public class GeneralCamera : MonoBehaviour
     [SerializeField] private float Sensitivity = 10f;
     [SerializeField] private Transform playerBody;
     [SerializeField] private Slider mouseSensitivity;
+    public bool lockCursor = true;
     private float xRotation = 0f;
 
+    private void Start()
+    {
+        if (lockCursor)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+    }
     private void OnEnable()
     {
         lookAction?.action?.Enable();

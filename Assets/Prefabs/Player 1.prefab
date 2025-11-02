@@ -126,6 +126,7 @@ GameObject:
   - component: {fileID: 2339839816846292758}
   - component: {fileID: 2000118712182775381}
   - component: {fileID: 5048179581421071548}
+  - component: {fileID: 2657792847053662822}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -267,6 +268,30 @@ MonoBehaviour:
   Sensitivity: 10
   playerBody: {fileID: 609747784370611462}
   mouseSensitivity: {fileID: 0}
+  lockCursor: 1
+--- !u!114 &2657792847053662822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3457605962315461502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d96330e0621e754caa0312681ea4db3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GrabObject
+  leftClick: {fileID: 1781555164194001046, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  rightClick: {fileID: -112095064302201197, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  maxGrabDistance: 6
+  defaultHoldDistance: 3
+  spring: 150
+  damper: 8
+  pushForce: 8
+  raycastMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  cameraOverride: {fileID: 8493399440043417100}
 --- !u!1 &4397372114655485778
 GameObject:
   m_ObjectHideFlags: 0
