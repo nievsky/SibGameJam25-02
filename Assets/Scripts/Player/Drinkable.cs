@@ -67,6 +67,7 @@ public class Drinkable : MonoBehaviour
         Drunk = Mathf.Max(0f, Drunk - DrunkDecreaser * Time.deltaTime);
         if (!_isHolding || Drunk >= 100f || cam == null)
         {
+
             Drinking = false;
             return;
         }

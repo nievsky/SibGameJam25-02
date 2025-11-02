@@ -127,6 +127,7 @@ GameObject:
   - component: {fileID: 2000118712182775381}
   - component: {fileID: 5048179581421071548}
   - component: {fileID: 2657792847053662822}
+  - component: {fileID: -6200094522438255700}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -291,6 +292,20 @@ MonoBehaviour:
   followStrength: 0.3
   pushForce: 8
   cameraOverride: {fileID: 8493399440043417100}
+--- !u!114 &-6200094522438255700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3457605962315461502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioListener
+  nonRigidbodyVelocity: 0
+  attenuationObject: {fileID: 0}
 --- !u!1 &4397372114655485778
 GameObject:
   m_ObjectHideFlags: 0
