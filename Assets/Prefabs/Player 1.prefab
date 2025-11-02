@@ -142,13 +142,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3457605962315461502}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0.7071068, z: -0, w: -0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1.674, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 609747784370611462}
-  m_LocalEulerAnglesHint: {x: 0, y: 270, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &8493399440043417100
 Camera:
   m_ObjectHideFlags: 0
@@ -281,16 +281,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d96330e0621e754caa0312681ea4db3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GrabObject
-  leftClick: {fileID: 1781555164194001046, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-  rightClick: {fileID: -112095064302201197, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-  maxGrabDistance: 6
-  defaultHoldDistance: 3
-  spring: 150
-  damper: 8
-  pushForce: 8
-  raycastMask:
+  grabAction: {fileID: 0}
+  pushAction: {fileID: 0}
+  grabLayer:
     serializedVersion: 2
     m_Bits: 4294967295
+  maxGrabDistance: 6
+  holdDistance: 4
+  followStrength: 0.3
+  pushForce: 8
   cameraOverride: {fileID: 8493399440043417100}
 --- !u!1 &4397372114655485778
 GameObject:
