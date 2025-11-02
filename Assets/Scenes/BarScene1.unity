@@ -12766,12 +12766,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BandPerformanceManager
   speakingEvents:
   - Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
-  musicEvents: []
+      Data1: -1004948556
+      Data2: 1321641443
+      Data3: 932547006
+      Data4: 554974839
+    Path: event:/Speaking
+  musicEvents:
+  - Guid:
+      Data1: -1130236735
+      Data2: 1319936303
+      Data3: 151720346
+      Data4: -865841087
+    Path: event:/Music
 --- !u!4 &654173036
 Transform:
   m_ObjectHideFlags: 0
@@ -35447,6 +35453,25 @@ Mesh:
       - serializedVersion: 1
         m_IndexStart: 0
         m_IndexCount: 0
+--- !u!1 &1807008973 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3457605962315461502, guid: 725cf0fa2b436414493be8dd5145ae7d, type: 3}
+  m_PrefabInstance: {fileID: 2077126991}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1807008980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1807008973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioListener
+  nonRigidbodyVelocity: 0
+  attenuationObject: {fileID: 0}
 --- !u!1 &1814294685
 GameObject:
   m_ObjectHideFlags: 0
@@ -47649,10 +47674,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5061454986789548417, guid: 725cf0fa2b436414493be8dd5145ae7d, type: 3}
+    - {fileID: 2339839816846292758, guid: 725cf0fa2b436414493be8dd5145ae7d, type: 3}
     m_RemovedGameObjects:
     - {fileID: 6220561850886146909, guid: 725cf0fa2b436414493be8dd5145ae7d, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3457605962315461502, guid: 725cf0fa2b436414493be8dd5145ae7d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1807008980}
   m_SourcePrefab: {fileID: 100100000, guid: 725cf0fa2b436414493be8dd5145ae7d, type: 3}
 --- !u!1 &2080219696
 GameObject:
