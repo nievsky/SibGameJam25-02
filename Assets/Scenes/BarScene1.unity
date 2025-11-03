@@ -5104,6 +5104,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1307948523}
     m_Modifications:
+    - target: {fileID: 30192081719190444, guid: dfa9bdd46ac7fb04bb57b646ee2b3a0e, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 101625468}
     - target: {fileID: 2883983531916407106, guid: dfa9bdd46ac7fb04bb57b646ee2b3a0e, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -32188,11 +32192,11 @@ PrefabInstance:
       objectReference: {fileID: 194109312}
     - target: {fileID: 30192081719190444, guid: dfa9bdd46ac7fb04bb57b646ee2b3a0e, type: 3}
       propertyPath: arcHeight
-      value: 3.5
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 30192081719190444, guid: dfa9bdd46ac7fb04bb57b646ee2b3a0e, type: 3}
       propertyPath: pushImpulse
-      value: 250
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 30192081719190444, guid: dfa9bdd46ac7fb04bb57b646ee2b3a0e, type: 3}
       propertyPath: spinStrength
