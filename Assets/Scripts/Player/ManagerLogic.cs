@@ -168,6 +168,17 @@ public class ManagerLogic : MonoBehaviour
         _isReloading = true;
         var scene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(scene.buildIndex);
+
+
+            // --- FMOD Cleanup before reloading ---
+            FMOD.Studio.System fmodSystem = FMODUnity.RuntimeManager.StudioSystem;
+
+            // Flush pending commands (stops events cleanly)
+            fmodSystem.flushCommands();
+
+            // Optional: stop all sounds immediately (hard stop)
+            FMODUnity.RuntimeManager.GetBus("bus:/").stopAllEvents(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+
     }
 
     // More robust: search in player and children, allow non-public members, and common name variants.
