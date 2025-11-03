@@ -9,10 +9,22 @@ public class ManagerLogic : MonoBehaviour
     [SerializeField] private List<SuckCup> cups = new List<SuckCup>();
     [SerializeField] private GameObject playerObject;
     [SerializeField] private float rotateSpeed = 90f; // degrees per second
-    [SerializeField] private float visibleFovDegrees = 180f; // total FOV angle
+
+    [Header("Visibility")]
+    [SerializeField, Range(0f, 360f)]
+    private float visibleFovDegrees = 180f; // total FOV angle
+    [SerializeField, Tooltip("Yaw offset (deg) of the view cone relative to forward. + turns right, - left.")]
+    private float visibleYawOffsetDegrees = 0f;
+    [SerializeField, Tooltip("Ignore vertical when checking visibility.")]
+    private bool ignoreVertical = true;
+
+    [Header("Detection")]
+    [SerializeField, Tooltip("How long the player must keep drinking while visible before reloading.")]
+    [Min(0f)] private float drinkingConfirmTime = 0.5f;
 
     private bool _playerDrinking;
     private Coroutine _rotationCo;
+    private Coroutine _drinkingCheckCo;
     private CupState _lastCupState = CupState.Mixed;
     private bool _isReloading;
 
@@ -40,13 +52,28 @@ public class ManagerLogic : MonoBehaviour
 
         _lastCupState = state;
 
-        // If player is within visible zone and drinking -> reload scene once
-        if (!_isReloading && IsPlayerInVisibleZone(visibleFovDegrees) && _playerDrinking)
+        // Delayed scene reload: start/stop confirmation coroutine
+        if (!_isReloading)
         {
-            ReloadCurrentScene();
+            bool inView = IsPlayerInVisibleZone();
+
+            if (inView && _playerDrinking)
+            {
+                if (_drinkingCheckCo == null)
+                    _drinkingCheckCo = StartCoroutine(ConfirmDrinkingThenReload());
+            }
+            else
+            {
+                if (_drinkingCheckCo != null)
+                {
+                    StopCoroutine(_drinkingCheckCo);
+                    _drinkingCheckCo = null;
+                }
+            }
         }
+
         Debug.Log("Is player drinking: " + _playerDrinking);
-        Debug.Log("Is player in visible zone: " + IsPlayerInVisibleZone(visibleFovDegrees));
+        Debug.Log("Is player in visible zone: " + IsPlayerInVisibleZone());
     }
 
     private enum CupState { AllEmpty, AllFull, Mixed }
@@ -88,19 +115,52 @@ public class ManagerLogic : MonoBehaviour
         _rotationCo = null;
     }
 
-    // Check if player is inside the forward FOV cone (total angle = visibleFovDegrees)
-    private bool IsPlayerInVisibleZone(float totalFovDeg)
+    // Confirmation window: require continuous visibility and drinking for 'drinkingConfirmTime'
+    private IEnumerator ConfirmDrinkingThenReload()
+    {
+        float elapsed = 0f;
+        while (elapsed < drinkingConfirmTime)
+        {
+            // Cancel if condition breaks during the window
+            if (!_playerDrinking || !IsPlayerInVisibleZone())
+            {
+                _drinkingCheckCo = null;
+                yield break;
+            }
+
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        if (!_isReloading)
+            ReloadCurrentScene();
+
+        _drinkingCheckCo = null;
+    }
+
+    // Check if player is inside the forward FOV cone with yaw offset
+    private bool IsPlayerInVisibleZone()
     {
         if (playerObject == null) return false;
 
         Vector3 toPlayer = playerObject.transform.position - transform.position;
-        toPlayer.y = 0f; // ignore vertical angle
+
+        // Prepare reference forward with yaw offset
+        Vector3 forward = transform.forward;
+        Quaternion yawOffset = Quaternion.Euler(0f, visibleYawOffsetDegrees, 0f);
+
+        if (ignoreVertical)
+        {
+            toPlayer.y = 0f;
+            forward = new Vector3(forward.x, 0f, forward.z);
+        }
+
         if (toPlayer.sqrMagnitude <= Mathf.Epsilon) return true;
 
-        Vector3 forward = new Vector3(transform.forward.x, 0f, transform.forward.z).normalized;
-        float halfFov = Mathf.Clamp(totalFovDeg, 0f, 360f) * 0.5f;
+        Vector3 centerDir = (yawOffset * forward).normalized;
+        float halfFov = Mathf.Clamp(visibleFovDegrees, 0f, 360f) * 0.5f;
 
-        return Vector3.Angle(forward, toPlayer) <= halfFov;
+        return Vector3.Angle(centerDir, toPlayer) <= halfFov;
     }
 
     private void ReloadCurrentScene()
@@ -169,4 +229,26 @@ public class ManagerLogic : MonoBehaviour
                 result = false; return false;
         }
     }
+
+#if UNITY_EDITOR
+    private void OnDrawGizmosSelected()
+    {
+        // Visualize the FOV with yaw offset in the Scene view
+        Gizmos.color = Color.yellow;
+        float halfFov = Mathf.Clamp(visibleFovDegrees, 0f, 360f) * 0.5f;
+
+        Vector3 origin = transform.position;
+        Vector3 baseForward = transform.forward;
+        if (ignoreVertical) baseForward = new Vector3(baseForward.x, 0f, baseForward.z).normalized;
+
+        Vector3 leftDir  = Quaternion.Euler(0f, visibleYawOffsetDegrees - halfFov, 0f) * baseForward;
+        Vector3 rightDir = Quaternion.Euler(0f, visibleYawOffsetDegrees + halfFov, 0f) * baseForward;
+        Vector3 center   = Quaternion.Euler(0f, visibleYawOffsetDegrees, 0f) * baseForward;
+
+        float rayLen = 2.0f;
+        Gizmos.DrawRay(origin, center * rayLen);
+        Gizmos.DrawRay(origin, leftDir * rayLen);
+        Gizmos.DrawRay(origin, rightDir * rayLen);
+    }
+#endif
 }
