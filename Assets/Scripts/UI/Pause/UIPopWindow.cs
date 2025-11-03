@@ -65,13 +65,26 @@ public class UIPopWindow : MonoBehaviour
         Cursor.visible = false;
         Hide();
     }
-    
+
     public void RestartLevel()
     {
-        Time.timeScale = 1f; // Resume the game
+        Time.timeScale = 1f;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
+        // --- FMOD Cleanup before reloading ---
+        FMOD.Studio.System fmodSystem = FMODUnity.RuntimeManager.StudioSystem;
+
+        // Flush pending commands (stops events cleanly)
+        fmodSystem.flushCommands();
+
+        // Optional: stop all sounds immediately (hard stop)
+        FMODUnity.RuntimeManager.GetBus("bus:/").stopAllEvents(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+
+        // Reload scene
+        UnityEngine.SceneManagement.SceneManager.LoadScene(
+            UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex
+        );
     }
 
     public void StartGame()
