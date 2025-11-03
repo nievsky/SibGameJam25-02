@@ -46,8 +46,7 @@ MonoBehaviour:
     Data2: 1169059959
     Data3: -1673453662
     Data4: -1618033449
-  Banks:
-  - {fileID: -4905494051839973204}
+  Banks: []
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -71,7 +70,7 @@ MonoBehaviour:
   Path: Assets/Scripts/Sound/FMODBank/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638977770615827235
+  lastModified: 638977866196503963
   FileSizes:
   - Name: 
     Value: 1116
@@ -118,7 +117,7 @@ MonoBehaviour:
   Path: Assets/Scripts/Sound/FMODBank/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638977770615802219
+  lastModified: 638977866196493949
   FileSizes: []
   Exists: 1
 --- !u!114 &-4792436633522507689
@@ -190,8 +189,7 @@ MonoBehaviour:
     Data2: 1094934987
     Data3: 1085855902
     Data4: -477519950
-  Banks:
-  - {fileID: -4905494051839973204}
+  Banks: []
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -217,8 +215,7 @@ MonoBehaviour:
     Data2: 1321641443
     Data3: 932547006
     Data4: 554974839
-  Banks:
-  - {fileID: -4905494051839973204}
+  Banks: []
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -244,8 +241,7 @@ MonoBehaviour:
     Data2: 1319936303
     Data3: 151720346
     Data4: -865841087
-  Banks:
-  - {fileID: -4905494051839973204}
+  Banks: []
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
@@ -453,7 +449,7 @@ MonoBehaviour:
   Banks:
   - {fileID: 2827627516536432412}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 0
   Parameters: []
   MinDistance: 1
@@ -487,18 +483,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Drink
+  m_Name: event:/Fill
   m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/Drink
+  Path: event:/Fill
   Guid:
-    Data1: 1395548074
-    Data2: 1276352713
-    Data3: 758449
-    Data4: -1419555409
+    Data1: 326540749
+    Data2: 1151269954
+    Data3: -364783950
+    Data4: -911108517
   Banks:
   - {fileID: -4905494051839973204}
   IsStream: 0
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 0
   Parameters: []
   MinDistance: 1
@@ -573,8 +569,7 @@ MonoBehaviour:
     Data2: 1297407077
     Data3: -1929377095
     Data4: 457627929
-  Banks:
-  - {fileID: -4905494051839973204}
+  Banks: []
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
