@@ -71168,14 +71168,70 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 913047617838795302, guid: 3d576a8d74c14ea43b0b0f90f7778ef8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1843768041068438436, guid: 3d576a8d74c14ea43b0b0f90f7778ef8, type: 3}
       propertyPath: m_Name
       value: CanvasUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 2962264690427315176, guid: 3d576a8d74c14ea43b0b0f90f7778ef8, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2962264690427315176, guid: 3d576a8d74c14ea43b0b0f90f7778ef8, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2962264690427315176, guid: 3d576a8d74c14ea43b0b0f90f7778ef8, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2962264690427315176, guid: 3d576a8d74c14ea43b0b0f90f7778ef8, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2993799011345205157, guid: 3d576a8d74c14ea43b0b0f90f7778ef8, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2993799011345205157, guid: 3d576a8d74c14ea43b0b0f90f7778ef8, type: 3}
+      propertyPath: m_Texture
+      value: 
+      objectReference: {fileID: 2800000, guid: 0690773f1680b194e9d3dc459590c06f, type: 3}
+    - target: {fileID: 3711405071515160908, guid: 3d576a8d74c14ea43b0b0f90f7778ef8, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7018648846075801017, guid: 3d576a8d74c14ea43b0b0f90f7778ef8, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7018648846075801017, guid: 3d576a8d74c14ea43b0b0f90f7778ef8, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7863221703478562309, guid: 3d576a8d74c14ea43b0b0f90f7778ef8, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7863221703478562309, guid: 3d576a8d74c14ea43b0b0f90f7778ef8, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2984dec0b82320e4da2bfe26019b6461, type: 3}
+    - target: {fileID: 7863221703478562309, guid: 3d576a8d74c14ea43b0b0f90f7778ef8, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8222693751945138083, guid: 3d576a8d74c14ea43b0b0f90f7778ef8, type: 3}
       propertyPath: drinkable
       value: 
       objectReference: {fileID: 750062450}
+    - target: {fileID: 9209698351910887839, guid: 3d576a8d74c14ea43b0b0f90f7778ef8, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
