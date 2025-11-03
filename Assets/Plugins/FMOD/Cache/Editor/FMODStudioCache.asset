@@ -42,10 +42,10 @@ MonoBehaviour:
   Path: Assets/Scripts/Sound/FMODBank/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638977247883333112
+  lastModified: 638977678757868158
   FileSizes:
   - Name: 
-    Value: 888
+    Value: 924
   Exists: 1
 --- !u!114 &-5419908316002851538
 MonoBehaviour:
@@ -74,6 +74,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 30
   Length: 3312
+--- !u!114 &-4024377279462703707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Drink
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Drink
+  Guid:
+    Data1: 1395548074
+    Data2: 1276352713
+    Data3: 758449
+    Data4: -1419555409
+  Banks:
+  - {fileID: 7660689557463649428}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1617
 --- !u!114 &-2175831726605152203
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121,13 +148,14 @@ MonoBehaviour:
   - {fileID: -8202146897962866366}
   - {fileID: 2433652789177568236}
   - {fileID: -5419908316002851538}
+  - {fileID: -4024377279462703707}
   EditorParameters: []
   MasterBanks:
   - {fileID: 7660689557463649428}
   StringsBanks:
   - {fileID: -5632518884033738661}
   cacheVersion: 131856
-  cacheTime: 638977247883333112
+  cacheTime: 638977678757868158
   SerializableEventsDict:
   - key: event:/Speaking
     index: 0
@@ -137,6 +165,8 @@ MonoBehaviour:
     index: 2
   - key: event:/Fill
     index: 3
+  - key: event:/Drink
+    index: 4
 --- !u!114 &2433652789177568236
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,6 +209,6 @@ MonoBehaviour:
   Path: Assets/Scripts/Sound/FMODBank/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638977247883313100
+  lastModified: 638977678757853146
   FileSizes: []
   Exists: 1

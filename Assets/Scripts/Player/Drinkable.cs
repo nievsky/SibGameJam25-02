@@ -1,12 +1,14 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using FMODUnity;
+using FMOD.Studio;
 
 public class Drinkable : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private Camera cam;                          // Defaults to Camera.main
     [SerializeField] private InputActionReference interactAction; // Button action (Press and Hold)
-    [SerializeField] private UnityEngine.UI.Slider slider;            // UI Slider to show drunk level
+    [SerializeField] private UnityEngine.UI.Slider slider;        // UI Slider to show drunk level
 
     [Header("Config")]
     [SerializeField] private float interactDistance = 5.0f;
@@ -15,17 +17,20 @@ public class Drinkable : MonoBehaviour
 
     [Header("Runtime")]
     public float Drunk = 0f; // 0..100
-
     public float DrunkDecreaser = 1f;
     public bool Drinking { get; private set; }
 
     private InputAction _interact;
     private bool _isHolding;
 
+    // FMOD
+    private EventInstance drinkSoundInstance;
+    private bool isDrinkSoundPlaying = false;
+    private const string DRINK_EVENT_PATH = "event:/Drink";
+
     private void Awake()
     {
         if (cam == null) cam = Camera.main;
-
     }
 
     private void OnEnable()
@@ -47,6 +52,8 @@ public class Drinkable : MonoBehaviour
             _interact.canceled -= OnInteractCanceled;
             _interact.Disable();
         }
+
+        StopDrinkingSound();
         Drinking = false;
         _isHolding = false;
     }
@@ -60,14 +67,15 @@ public class Drinkable : MonoBehaviour
     {
         _isHolding = false;
         Drinking = false;
+        StopDrinkingSound();
     }
 
     private void Update()
     {
         Drunk = Mathf.Max(0f, Drunk - DrunkDecreaser * Time.deltaTime);
+
         if (!_isHolding || Drunk >= 100f || cam == null)
         {
-
             Drinking = false;
             return;
         }
@@ -88,17 +96,41 @@ public class Drinkable : MonoBehaviour
                     drinkable.DrinkSeconds = Mathf.Max(0f, drinkable.DrinkSeconds - dt);
 
                     Drinking = true;
+                    StartDrinkingSound(hit.collider.gameObject);
 
                     // Stop if either depleted or capped
                     if (drinkable.DrinkSeconds <= 0f || Drunk >= 100f)
+                    {
                         _isHolding = false;
+                        StopDrinkingSound();
+                    }
 
                     return;
                 }
             }
         }
 
-        // Not aimed at a valid drink or out of range
         Drinking = false;
+    }
+
+    // --- FMOD Logic ---
+
+    private void StartDrinkingSound(GameObject source)
+    {
+        if (isDrinkSoundPlaying) return;
+
+        drinkSoundInstance = RuntimeManager.CreateInstance(DRINK_EVENT_PATH);
+        drinkSoundInstance.set3DAttributes(RuntimeUtils.To3DAttributes(source));
+        drinkSoundInstance.start();
+        isDrinkSoundPlaying = true;
+    }
+
+    private void StopDrinkingSound()
+    {
+        if (!isDrinkSoundPlaying) return;
+
+        drinkSoundInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        drinkSoundInstance.release();
+        isDrinkSoundPlaying = false;
     }
 }
