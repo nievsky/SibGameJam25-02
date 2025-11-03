@@ -201,7 +201,7 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: -5687139559624234226}
   cacheVersion: 131856
-  cacheTime: 638977770615827235
+  cacheTime: 638977708257591070
   SerializableEventsDict:
   - key: event:/CupHit
     index: 0
@@ -220,6 +220,26 @@ MonoBehaviour:
   - key: event:/DrinkNPC
     index: 7
 --- !u!114 &2752727100835982476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorBankRef
+  Path: Assets/Scripts/Sound/FMODBank/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 638977708257591070
+  FileSizes:
+  - Name: 
+    Value: 888
+  Exists: 1
+--- !u!114 &2433652789177568236
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -247,6 +267,24 @@ MonoBehaviour:
   MaxDistance: 20
   Length: 1437
 --- !u!114 &5756128330580876403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorBankRef
+  Path: Assets/Scripts/Sound/FMODBank/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 638977708257571097
+  FileSizes: []
+  Exists: 1
+--- !u!114 &6940939113907994034
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
