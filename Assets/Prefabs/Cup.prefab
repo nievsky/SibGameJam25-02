@@ -117,7 +117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 966f6533ba2742b4ea9af8703f923f51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DrinkComponent
-  DrinkSeconds: 5
+  DrinkSeconds: 0
   MaxDrinkSeconds: 5
 --- !u!114 &7355456191610460964
 MonoBehaviour:
