@@ -21,17 +21,15 @@ public class ManagerLogic : MonoBehaviour
         if (TryGetPlayerDrinking(playerObject, out var drinking))
             _playerDrinking = drinking;
 
-        // Trigger rotation when all cups are empty
-        if (!_rotationDone && AllCupsEmpty())
+        if (_rotationDone) return;
+
+        // When all cups are "full" (isEmpty == false), rotate back 180 degrees once
+        if (!_rotating && AllCupsFull())
         {
-            if (!_rotating)
-            {
-                _targetRotation = transform.rotation * Quaternion.Euler(0f, 90f, 0f);
-                _rotating = true;
-            }
+            _targetRotation = transform.rotation * Quaternion.Euler(0f, 180f, 0f);
+            _rotating = true;
         }
 
-        // Rotate smoothly toward target
         if (_rotating)
         {
             transform.rotation = Quaternion.RotateTowards(
@@ -49,13 +47,14 @@ public class ManagerLogic : MonoBehaviour
         }
     }
 
-    private bool AllCupsEmpty()
+    // True only when every cup has isEmpty == false
+    private bool AllCupsFull()
     {
         if (cups == null || cups.Count == 0) return false;
         foreach (var cup in cups)
         {
             if (cup == null) return false;
-            if (!cup.isEmpty) return false;
+            if (cup.isEmpty) return false;
         }
         return true;
     }
