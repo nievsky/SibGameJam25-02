@@ -28,6 +28,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 170
+--- !u!114 &-7787524937007498137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/ManagerHit/Velocity
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
+  Name: Velocity
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 580246176
+    data2: 4274481683
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &-7304482442725384453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -333,13 +357,14 @@ MonoBehaviour:
   - {fileID: -7304482442725384453}
   - {fileID: 508989701058028750}
   - {fileID: 68709342542403744}
+  - {fileID: 2597771511581146670}
   EditorParameters: []
   MasterBanks:
   - {fileID: 2827627516536432412}
   StringsBanks:
   - {fileID: 1239965548315689500}
   cacheVersion: 131856
-  cacheTime: 638977916340746535
+  cacheTime: 638977951179057791
   SerializableEventsDict:
   - key: event:/Crowd
     index: 0
@@ -365,6 +390,8 @@ MonoBehaviour:
     index: 10
   - key: event:/AshtrayHit
     index: 11
+  - key: event:/Manager/ManagerHit
+    index: 12
 --- !u!114 &68709342542403744
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -458,10 +485,10 @@ MonoBehaviour:
   Path: Assets/Scripts/Sound/FMODBank/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638977916340746535
+  lastModified: 638977951179057791
   FileSizes:
   - Name: 
-    Value: 1292
+    Value: 1352
   Exists: 1
 --- !u!114 &1845170910147909650
 MonoBehaviour:
@@ -517,6 +544,34 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1437
+--- !u!114 &2597771511581146670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Manager/ManagerHit
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Manager/ManagerHit
+  Guid:
+    Data1: -542893564
+    Data2: 1089471615
+    Data3: -1004870219
+    Data4: 574782150
+  Banks:
+  - {fileID: 2827627516536432412}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -7787524937007498137}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 471
 --- !u!114 &2721174072960143193
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -579,7 +634,7 @@ MonoBehaviour:
   Path: Assets/Scripts/Sound/FMODBank/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638977916340721519
+  lastModified: 638977951179007751
   FileSizes: []
   Exists: 1
 --- !u!114 &3691303301076342806
