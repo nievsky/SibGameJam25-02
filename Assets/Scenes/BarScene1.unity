@@ -7275,7 +7275,7 @@ MonoBehaviour:
   uprightStrength: 40
   uprightDamping: 5
   maxTorque: 200
-  keepYawOnly: 0
+  keepYawOnly: 1
   positionStrength: 10
   positionDamping: 2
   maxForce: 500
@@ -16122,6 +16122,18 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: d326fd42707adfc40a6c00779358423a, type: 2}
+    - target: {fileID: 6737896496866045751, guid: 361736a10949896499a12a3fb7d86404, type: 3}
+      propertyPath: playerObject
+      value: 
+      objectReference: {fileID: 997567164}
+    - target: {fileID: 6737896496866045751, guid: 361736a10949896499a12a3fb7d86404, type: 3}
+      propertyPath: cups.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6737896496866045751, guid: 361736a10949896499a12a3fb7d86404, type: 3}
+      propertyPath: 'cups.Array.data[0]'
+      value: 
+      objectReference: {fileID: 261736371}
     - target: {fileID: 7760360202176065102, guid: 361736a10949896499a12a3fb7d86404, type: 3}
       propertyPath: m_Name
       value: Manager
@@ -26632,6 +26644,11 @@ Mesh:
       - serializedVersion: 1
         m_IndexStart: 0
         m_IndexCount: 0
+--- !u!1 &997567164 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7760360202176065102, guid: 725cf0fa2b436414493be8dd5145ae7d, type: 3}
+  m_PrefabInstance: {fileID: 2077126991}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &997720130
 GameObject:
   m_ObjectHideFlags: 0
