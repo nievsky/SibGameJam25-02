@@ -1,5 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
+using FMODUnity;
+using FMOD.Studio;
 
 public class SuckCup : MonoBehaviour
 {
@@ -11,6 +13,13 @@ public class SuckCup : MonoBehaviour
     [Header("Push on empty")]
     [SerializeField] private Transform player; // assign in Inspector
     [SerializeField] private float pushImpulse = 5f;
+
+    private EventInstance drinkSoundInstance;
+    private EventInstance throwSoundInstance;
+    private bool isDrinkSoundPlaying = false;
+    private bool isThrowSoundPlaying = false;
+    private const string DRINK_EVENT_PATH = "event:/DrinkNPC";
+    private const string THROW_EVENT_PATH = "event:/CupThrow";
 
     private readonly HashSet<DrinkComponent> pushedOnEmpty = new HashSet<DrinkComponent>();
 
@@ -72,7 +81,12 @@ public class SuckCup : MonoBehaviour
 
         float current = drink.DrinkSeconds;
         if (current <= 0f)
+        {
+            StopDrinkingSound();
             return;
+        }
+
+        StartDrinkingSound(drink.gameObject);
 
         float newValue = Mathf.Max(0f, current - fillRatePerSecond * deltaTime);
         drink.DrinkSeconds = newValue;
@@ -81,16 +95,21 @@ public class SuckCup : MonoBehaviour
         {
             pushedOnEmpty.Add(drink);
             PushCupTowardPlayer(targetRb);
+            StopDrinkingSound();
         }
         else if (newValue > 0f && pushedOnEmpty.Contains(drink))
         {
             // Allow push again if refilled later
             pushedOnEmpty.Remove(drink);
         }
+
     }
+
 
     private void PushCupTowardPlayer(Rigidbody targetRb)
     {
+        StopDrinkingSound();
+
         if (targetRb == null || player == null)
             return;
 
@@ -98,6 +117,39 @@ public class SuckCup : MonoBehaviour
         if (dir.sqrMagnitude < 1e-6f)
             return;
 
+        // Apply throw force
         targetRb.AddForce(dir * pushImpulse, ForceMode.Impulse);
+
+
+        ThrowSound(targetRb.gameObject);
     }
+
+
+    private void StartDrinkingSound(GameObject source)
+    {
+        if (isDrinkSoundPlaying) return;
+
+        drinkSoundInstance = RuntimeManager.CreateInstance(DRINK_EVENT_PATH);
+        drinkSoundInstance.set3DAttributes(RuntimeUtils.To3DAttributes(source));
+        drinkSoundInstance.start();
+        isDrinkSoundPlaying = true;
+    }
+
+    private void StopDrinkingSound()
+    {
+        if (!isDrinkSoundPlaying) return;
+
+        drinkSoundInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        drinkSoundInstance.release();
+        isDrinkSoundPlaying = false;
+    }
+
+    private void ThrowSound(GameObject source)
+    {
+        EventInstance throwInstance = RuntimeManager.CreateInstance(THROW_EVENT_PATH);
+        throwInstance.set3DAttributes(RuntimeUtils.To3DAttributes(source));
+        throwInstance.start();
+        throwInstance.release();
+    }
+
 }

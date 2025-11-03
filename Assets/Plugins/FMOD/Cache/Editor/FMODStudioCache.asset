@@ -27,6 +27,61 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 50
   Length: 90000
+--- !u!114 &-6549120908385970978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/DrinkNPC
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/DrinkNPC
+  Guid:
+    Data1: -1149949208
+    Data2: 1235584033
+    Data3: 32130722
+    Data4: 1710275032
+  Banks:
+  - {fileID: 7660689557463649428}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1437
+--- !u!114 &-5984715116142194333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/CupHit
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/CupHit
+  Guid:
+    Data1: -497697216
+    Data2: 1169059959
+    Data3: -1673453662
+    Data4: -1618033449
+  Banks:
+  - {fileID: 7660689557463649428}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -3114885340408094367}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 170
 --- !u!114 &-5632518884033738661
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42,10 +97,10 @@ MonoBehaviour:
   Path: Assets/Scripts/Sound/FMODBank/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638977678757868158
+  lastModified: 638977732215978064
   FileSizes:
   - Name: 
-    Value: 924
+    Value: 1116
   Exists: 1
 --- !u!114 &-5419908316002851538
 MonoBehaviour:
@@ -101,6 +156,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1617
+--- !u!114 &-3114885340408094367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/CupHit/Velocity
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
+  Name: Velocity
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 580246176
+    data2: 4274481683
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &-2175831726605152203
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -149,13 +228,16 @@ MonoBehaviour:
   - {fileID: 2433652789177568236}
   - {fileID: -5419908316002851538}
   - {fileID: -4024377279462703707}
+  - {fileID: -6549120908385970978}
+  - {fileID: -5984715116142194333}
+  - {fileID: 1722204093704516729}
   EditorParameters: []
   MasterBanks:
   - {fileID: 7660689557463649428}
   StringsBanks:
   - {fileID: -5632518884033738661}
   cacheVersion: 131856
-  cacheTime: 638977678757868158
+  cacheTime: 638977732215978064
   SerializableEventsDict:
   - key: event:/Speaking
     index: 0
@@ -167,6 +249,39 @@ MonoBehaviour:
     index: 3
   - key: event:/Drink
     index: 4
+  - key: event:/DrinkNPC
+    index: 5
+  - key: event:/CupHit
+    index: 6
+  - key: event:/CupThrow
+    index: 7
+--- !u!114 &1722204093704516729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/CupThrow
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/CupThrow
+  Guid:
+    Data1: -21604768
+    Data2: 1094934987
+    Data3: 1085855902
+    Data4: -477519950
+  Banks:
+  - {fileID: 7660689557463649428}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 231
 --- !u!114 &2433652789177568236
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -209,6 +324,6 @@ MonoBehaviour:
   Path: Assets/Scripts/Sound/FMODBank/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638977678757853146
+  lastModified: 638977732215958048
   FileSizes: []
   Exists: 1
