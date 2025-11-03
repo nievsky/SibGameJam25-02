@@ -7345,7 +7345,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 194109302}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d05a4d17b1e3da046b433985acd3dfef, type: 3}
   m_Name: 
@@ -14720,6 +14720,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -8088130645286484877, guid: b4e4d9ca3e4591d45ac6130571e9212d, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: -4125471728267972529, guid: b4e4d9ca3e4591d45ac6130571e9212d, type: 3}
     - target: {fileID: -6083309630904873636, guid: b4e4d9ca3e4591d45ac6130571e9212d, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -16863,6 +16867,22 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: d326fd42707adfc40a6c00779358423a, type: 2}
+    - target: {fileID: 6737896496866045751, guid: 361736a10949896499a12a3fb7d86404, type: 3}
+      propertyPath: playerObject
+      value: 
+      objectReference: {fileID: 1654682322}
+    - target: {fileID: 6737896496866045751, guid: 361736a10949896499a12a3fb7d86404, type: 3}
+      propertyPath: cups.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6737896496866045751, guid: 361736a10949896499a12a3fb7d86404, type: 3}
+      propertyPath: 'cups.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1968424357}
+    - target: {fileID: 6737896496866045751, guid: 361736a10949896499a12a3fb7d86404, type: 3}
+      propertyPath: visibleYawOffsetDegrees
+      value: -90
+      objectReference: {fileID: 0}
     - target: {fileID: 7760360202176065102, guid: 361736a10949896499a12a3fb7d86404, type: 3}
       propertyPath: m_Name
       value: Manager
@@ -47129,6 +47149,11 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!1 &1654682322 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7760360202176065102, guid: 725cf0fa2b436414493be8dd5145ae7d, type: 3}
+  m_PrefabInstance: {fileID: 2077126991}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &1664834077
 Mesh:
   m_ObjectHideFlags: 0
@@ -61956,6 +61981,17 @@ Mesh:
       - serializedVersion: 1
         m_IndexStart: 0
         m_IndexCount: 0
+--- !u!114 &1968424357 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 30192081719190444, guid: dfa9bdd46ac7fb04bb57b646ee2b3a0e, type: 3}
+  m_PrefabInstance: {fileID: 2522323677437392660}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc2618ccbc5bdf141b8941353268e178, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SuckCup
 --- !u!1 &1994257640
 GameObject:
   m_ObjectHideFlags: 0
@@ -69877,6 +69913,22 @@ PrefabInstance:
       propertyPath: orthographic size
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 5454028089233764021, guid: 725cf0fa2b436414493be8dd5145ae7d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.10851986
+      objectReference: {fileID: 0}
+    - target: {fileID: 5454028089233764021, guid: 725cf0fa2b436414493be8dd5145ae7d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.9940943
+      objectReference: {fileID: 0}
+    - target: {fileID: 5454028089233764021, guid: 725cf0fa2b436414493be8dd5145ae7d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5454028089233764021, guid: 725cf0fa2b436414493be8dd5145ae7d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 192.46
+      objectReference: {fileID: 0}
     - target: {fileID: 6341673153643102302, guid: 725cf0fa2b436414493be8dd5145ae7d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -72102,10 +72154,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1777459185285864725, guid: e467e55ccb4629f4cb934be12d3a6352, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1633168515}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e467e55ccb4629f4cb934be12d3a6352, type: 3}
 --- !u!1 &5675885949565079652
 GameObject:
