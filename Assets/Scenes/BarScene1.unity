@@ -4927,7 +4927,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1777459185285864725, guid: e467e55ccb4629f4cb934be12d3a6352, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1237325205}
   m_SourcePrefab: {fileID: 100100000, guid: e467e55ccb4629f4cb934be12d3a6352, type: 3}
 --- !u!1 &73212714
 GameObject:
@@ -4942,6 +4945,7 @@ GameObject:
   - component: {fileID: 73212717}
   - component: {fileID: 73212716}
   - component: {fileID: 73212715}
+  - component: {fileID: 73212720}
   m_Layer: 0
   m_Name: beer
   m_TagString: Dragable
@@ -5069,6 +5073,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1882208944}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &73212720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 73212714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40ded5412fabd07468ae3b40f77ed20d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ImpactSound
+  impactEvent:
+    Guid:
+      Data1: -1981584820
+      Data2: 1148893803
+      Data3: -1678811493
+      Data4: 1591993251
+    Path: event:/BottleHit
+  minVelocity: 0.2
+  useVelocityParameter: 1
+  velocityParameterName: Velocity
+  cooldown: 0.05
 --- !u!1001 &78507705
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5155,6 +5182,7 @@ GameObject:
   - component: {fileID: 95352327}
   - component: {fileID: 95352326}
   - component: {fileID: 95352325}
+  - component: {fileID: 95352330}
   m_Layer: 0
   m_Name: tequila (1)
   m_TagString: Dragable
@@ -5282,6 +5310,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1882208944}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &95352330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 95352324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40ded5412fabd07468ae3b40f77ed20d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ImpactSound
+  impactEvent:
+    Guid:
+      Data1: -1981584820
+      Data2: 1148893803
+      Data3: -1678811493
+      Data4: 1591993251
+    Path: event:/BottleHit
+  minVelocity: 0.2
+  useVelocityParameter: 1
+  velocityParameterName: Velocity
+  cooldown: 0.05
 --- !u!4 &101625468 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 609747784370611462, guid: 725cf0fa2b436414493be8dd5145ae7d, type: 3}
@@ -12339,6 +12390,7 @@ GameObject:
   - component: {fileID: 365518926}
   - component: {fileID: 365518925}
   - component: {fileID: 365518924}
+  - component: {fileID: 365518929}
   m_Layer: 0
   m_Name: koniyak (2)
   m_TagString: Dragable
@@ -12466,6 +12518,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1882208944}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &365518929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 365518923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40ded5412fabd07468ae3b40f77ed20d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ImpactSound
+  impactEvent:
+    Guid:
+      Data1: -1981584820
+      Data2: 1148893803
+      Data3: -1678811493
+      Data4: 1591993251
+    Path: event:/BottleHit
+  minVelocity: 0.2
+  useVelocityParameter: 1
+  velocityParameterName: Velocity
+  cooldown: 0.05
 --- !u!1 &374797589
 GameObject:
   m_ObjectHideFlags: 0
@@ -12512,6 +12587,7 @@ GameObject:
   - component: {fileID: 377111877}
   - component: {fileID: 377111876}
   - component: {fileID: 377111875}
+  - component: {fileID: 377111880}
   m_Layer: 0
   m_Name: absinth (1)
   m_TagString: Dragable
@@ -12639,6 +12715,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1882208944}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &377111880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 377111874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40ded5412fabd07468ae3b40f77ed20d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ImpactSound
+  impactEvent:
+    Guid:
+      Data1: -1981584820
+      Data2: 1148893803
+      Data3: -1678811493
+      Data4: 1591993251
+    Path: event:/BottleHit
+  minVelocity: 0.2
+  useVelocityParameter: 1
+  velocityParameterName: Velocity
+  cooldown: 0.05
 --- !u!1 &390872934
 GameObject:
   m_ObjectHideFlags: 0
@@ -22991,6 +23090,11 @@ Mesh:
       - serializedVersion: 1
         m_IndexStart: 0
         m_IndexCount: 0
+--- !u!1 &742160726 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1777459185285864725, guid: e467e55ccb4629f4cb934be12d3a6352, type: 3}
+  m_PrefabInstance: {fileID: 68357055}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &750062443 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3457605962315461502, guid: 725cf0fa2b436414493be8dd5145ae7d, type: 3}
@@ -25572,6 +25676,7 @@ GameObject:
   - component: {fileID: 852592504}
   - component: {fileID: 852592503}
   - component: {fileID: 852592502}
+  - component: {fileID: 852592507}
   m_Layer: 0
   m_Name: tequila (2)
   m_TagString: Dragable
@@ -25699,6 +25804,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1882208944}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &852592507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 852592501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40ded5412fabd07468ae3b40f77ed20d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ImpactSound
+  impactEvent:
+    Guid:
+      Data1: -1981584820
+      Data2: 1148893803
+      Data3: -1678811493
+      Data4: 1591993251
+    Path: event:/BottleHit
+  minVelocity: 0.2
+  useVelocityParameter: 1
+  velocityParameterName: Velocity
+  cooldown: 0.05
 --- !u!54 &853051670
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -27097,6 +27225,7 @@ GameObject:
   - component: {fileID: 909155904}
   - component: {fileID: 909155903}
   - component: {fileID: 909155902}
+  - component: {fileID: 909155907}
   m_Layer: 0
   m_Name: tequila (3)
   m_TagString: Dragable
@@ -27224,6 +27353,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1882208944}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &909155907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 909155901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40ded5412fabd07468ae3b40f77ed20d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ImpactSound
+  impactEvent:
+    Guid:
+      Data1: -1981584820
+      Data2: 1148893803
+      Data3: -1678811493
+      Data4: 1591993251
+    Path: event:/BottleHit
+  minVelocity: 0.2
+  useVelocityParameter: 1
+  velocityParameterName: Velocity
+  cooldown: 0.05
 --- !u!1 &931978759
 GameObject:
   m_ObjectHideFlags: 0
@@ -29878,6 +30030,7 @@ GameObject:
   - component: {fileID: 1001179695}
   - component: {fileID: 1001179694}
   - component: {fileID: 1001179693}
+  - component: {fileID: 1001179698}
   m_Layer: 0
   m_Name: beer (1)
   m_TagString: Dragable
@@ -30005,6 +30158,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1882208944}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1001179698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1001179692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40ded5412fabd07468ae3b40f77ed20d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ImpactSound
+  impactEvent:
+    Guid:
+      Data1: -1981584820
+      Data2: 1148893803
+      Data3: -1678811493
+      Data4: 1591993251
+    Path: event:/BottleHit
+  minVelocity: 0.2
+  useVelocityParameter: 1
+  velocityParameterName: Velocity
+  cooldown: 0.05
 --- !u!1 &1044831351
 GameObject:
   m_ObjectHideFlags: 0
@@ -31569,6 +31745,7 @@ GameObject:
   - component: {fileID: 1215278911}
   - component: {fileID: 1215278910}
   - component: {fileID: 1215278909}
+  - component: {fileID: 1215278914}
   m_Layer: 0
   m_Name: beer (2)
   m_TagString: Dragable
@@ -31696,6 +31873,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1882208944}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1215278914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1215278908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40ded5412fabd07468ae3b40f77ed20d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ImpactSound
+  impactEvent:
+    Guid:
+      Data1: -1981584820
+      Data2: 1148893803
+      Data3: -1678811493
+      Data4: 1591993251
+    Path: event:/BottleHit
+  minVelocity: 0.2
+  useVelocityParameter: 1
+  velocityParameterName: Velocity
+  cooldown: 0.05
 --- !u!1001 &1216123320
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31972,6 +32172,29 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1432458157057656751, guid: e467e55ccb4629f4cb934be12d3a6352, type: 3}
   m_PrefabInstance: {fileID: 68357055}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1237325205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 742160726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40ded5412fabd07468ae3b40f77ed20d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ImpactSound
+  impactEvent:
+    Guid:
+      Data1: -1223772106
+      Data2: 1216604827
+      Data3: 490572459
+      Data4: 1034083113
+    Path: event:/FlaskHit
+  minVelocity: 0.2
+  useVelocityParameter: 1
+  velocityParameterName: Velocity
+  cooldown: 0.05
 --- !u!1 &1244023573
 GameObject:
   m_ObjectHideFlags: 0
@@ -39612,6 +39835,7 @@ GameObject:
   - component: {fileID: 1529633266}
   - component: {fileID: 1529633265}
   - component: {fileID: 1529633264}
+  - component: {fileID: 1529633269}
   m_Layer: 0
   m_Name: koniyak (1)
   m_TagString: Dragable
@@ -39739,6 +39963,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1882208944}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1529633269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1529633263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40ded5412fabd07468ae3b40f77ed20d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ImpactSound
+  impactEvent:
+    Guid:
+      Data1: -1981584820
+      Data2: 1148893803
+      Data3: -1678811493
+      Data4: 1591993251
+    Path: event:/BottleHit
+  minVelocity: 0.2
+  useVelocityParameter: 1
+  velocityParameterName: Velocity
+  cooldown: 0.05
 --- !u!1 &1531377310
 GameObject:
   m_ObjectHideFlags: 0
@@ -43834,6 +44081,34 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!1 &1633168510 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1777459185285864725, guid: e467e55ccb4629f4cb934be12d3a6352, type: 3}
+  m_PrefabInstance: {fileID: 5438980595058033303}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1633168515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1633168510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40ded5412fabd07468ae3b40f77ed20d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ImpactSound
+  impactEvent:
+    Guid:
+      Data1: -1223772106
+      Data2: 1216604827
+      Data3: 490572459
+      Data4: 1034083113
+    Path: event:/FlaskHit
+  minVelocity: 0.2
+  useVelocityParameter: 1
+  velocityParameterName: Velocity
+  cooldown: 0.05
 --- !u!1 &1639064675
 GameObject:
   m_ObjectHideFlags: 0
@@ -63434,6 +63709,7 @@ GameObject:
   - component: {fileID: 2005595871}
   - component: {fileID: 2005595870}
   - component: {fileID: 2005595869}
+  - component: {fileID: 2005595874}
   m_Layer: 0
   m_Name: beer (4)
   m_TagString: Dragable
@@ -63561,6 +63837,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1882208944}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2005595874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2005595868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40ded5412fabd07468ae3b40f77ed20d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ImpactSound
+  impactEvent:
+    Guid:
+      Data1: -1981584820
+      Data2: 1148893803
+      Data3: -1678811493
+      Data4: 1591993251
+    Path: event:/BottleHit
+  minVelocity: 0.2
+  useVelocityParameter: 1
+  velocityParameterName: Velocity
+  cooldown: 0.05
 --- !u!1001 &2006612514
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -68467,6 +68766,7 @@ GameObject:
   - component: {fileID: 2048661303}
   - component: {fileID: 2048661302}
   - component: {fileID: 2048661301}
+  - component: {fileID: 2048661306}
   m_Layer: 0
   m_Name: beer (3)
   m_TagString: Dragable
@@ -68594,6 +68894,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1882208944}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2048661306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2048661300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40ded5412fabd07468ae3b40f77ed20d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ImpactSound
+  impactEvent:
+    Guid:
+      Data1: -1981584820
+      Data2: 1148893803
+      Data3: -1678811493
+      Data4: 1591993251
+    Path: event:/BottleHit
+  minVelocity: 0.2
+  useVelocityParameter: 1
+  velocityParameterName: Velocity
+  cooldown: 0.05
 --- !u!43 &2049670741
 Mesh:
   m_ObjectHideFlags: 0
@@ -69946,6 +70269,7 @@ GameObject:
   - component: {fileID: 3440980896928841532}
   - component: {fileID: 8375359703659861997}
   - component: {fileID: 8375359703659861996}
+  - component: {fileID: 8375359703659861998}
   m_Layer: 0
   m_Name: absinth
   m_TagString: Dragable
@@ -71048,6 +71372,7 @@ GameObject:
   - component: {fileID: 6957035015677838151}
   - component: {fileID: 6957035015677838153}
   - component: {fileID: 6957035015677838152}
+  - component: {fileID: 6957035015677838154}
   m_Layer: 0
   m_Name: beer
   m_TagString: Dragable
@@ -71293,7 +71618,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1777459185285864725, guid: e467e55ccb4629f4cb934be12d3a6352, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1633168515}
   m_SourcePrefab: {fileID: 100100000, guid: e467e55ccb4629f4cb934be12d3a6352, type: 3}
 --- !u!1 &5675885949565079652
 GameObject:
@@ -71326,6 +71654,7 @@ GameObject:
   - component: {fileID: 3311293004890428216}
   - component: {fileID: 6184515220754704691}
   - component: {fileID: 6184515220754704690}
+  - component: {fileID: 6184515220754704692}
   m_Layer: 0
   m_Name: tequila
   m_TagString: Dragable
@@ -71382,6 +71711,29 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 5256290166758383655, guid: 6c10763bead2e1c4797c31448816625d, type: 3}
+--- !u!114 &6184515220754704692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6184515220754704689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40ded5412fabd07468ae3b40f77ed20d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ImpactSound
+  impactEvent:
+    Guid:
+      Data1: -1981584820
+      Data2: 1148893803
+      Data3: -1678811493
+      Data4: 1591993251
+    Path: event:/BottleHit
+  minVelocity: 0.2
+  useVelocityParameter: 1
+  velocityParameterName: Velocity
+  cooldown: 0.05
 --- !u!1 &6299995933650966092
 GameObject:
   m_ObjectHideFlags: 0
@@ -71395,6 +71747,7 @@ GameObject:
   - component: {fileID: 6974112137832308909}
   - component: {fileID: 8500610279570993132}
   - component: {fileID: 8500610279570993131}
+  - component: {fileID: 8500610279570993133}
   m_Layer: 0
   m_Name: koniyak
   m_TagString: Dragable
@@ -71583,6 +71936,29 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 7431596311278034049, guid: 6c10763bead2e1c4797c31448816625d, type: 3}
+--- !u!114 &6957035015677838154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3846688641470105550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40ded5412fabd07468ae3b40f77ed20d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ImpactSound
+  impactEvent:
+    Guid:
+      Data1: -1981584820
+      Data2: 1148893803
+      Data3: -1678811493
+      Data4: 1591993251
+    Path: event:/BottleHit
+  minVelocity: 0.2
+  useVelocityParameter: 1
+  velocityParameterName: Velocity
+  cooldown: 0.05
 --- !u!23 &6974112137832308909
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -71970,6 +72346,29 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -1754246776524639928, guid: 6c10763bead2e1c4797c31448816625d, type: 3}
+--- !u!114 &8375359703659861998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 581079525847108802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40ded5412fabd07468ae3b40f77ed20d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ImpactSound
+  impactEvent:
+    Guid:
+      Data1: -1981584820
+      Data2: 1148893803
+      Data3: -1678811493
+      Data4: 1591993251
+    Path: event:/BottleHit
+  minVelocity: 0.2
+  useVelocityParameter: 1
+  velocityParameterName: Velocity
+  cooldown: 0.05
 --- !u!33 &8385691265739047339
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -72050,6 +72449,29 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 8554498023653013709, guid: 6c10763bead2e1c4797c31448816625d, type: 3}
+--- !u!114 &8500610279570993133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6299995933650966092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40ded5412fabd07468ae3b40f77ed20d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ImpactSound
+  impactEvent:
+    Guid:
+      Data1: -1981584820
+      Data2: 1148893803
+      Data3: -1678811493
+      Data4: 1591993251
+    Path: event:/BottleHit
+  minVelocity: 0.2
+  useVelocityParameter: 1
+  velocityParameterName: Velocity
+  cooldown: 0.05
 --- !u!1001 &8730284778002484684
 PrefabInstance:
   m_ObjectHideFlags: 0
