@@ -6787,6 +6787,11 @@ MonoBehaviour:
   positionDamping: 2
   maxForce: 500
   useAccelerationMode: 1
+--- !u!4 &194109312 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 609747784370611462, guid: 361736a10949896499a12a3fb7d86404, type: 3}
+  m_PrefabInstance: {fileID: 608294265}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &200084355
 Mesh:
   m_ObjectHideFlags: 0
@@ -15723,7 +15728,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7760360202176065102, guid: 361736a10949896499a12a3fb7d86404, type: 3}
       propertyPath: m_TagString
-      value: Dragable
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -28022,6 +28027,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1307948523}
     m_Modifications:
+    - target: {fileID: 30192081719190444, guid: dfa9bdd46ac7fb04bb57b646ee2b3a0e, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 194109312}
+    - target: {fileID: 30192081719190444, guid: dfa9bdd46ac7fb04bb57b646ee2b3a0e, type: 3}
+      propertyPath: arcHeight
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 30192081719190444, guid: dfa9bdd46ac7fb04bb57b646ee2b3a0e, type: 3}
+      propertyPath: pushImpulse
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 30192081719190444, guid: dfa9bdd46ac7fb04bb57b646ee2b3a0e, type: 3}
+      propertyPath: spinStrength
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 30192081719190444, guid: dfa9bdd46ac7fb04bb57b646ee2b3a0e, type: 3}
+      propertyPath: maxAngularVelocity
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 7036039716655484207, guid: dfa9bdd46ac7fb04bb57b646ee2b3a0e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.215667
@@ -29141,6 +29166,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1307948523}
     m_Modifications:
+    - target: {fileID: 30192081719190444, guid: dfa9bdd46ac7fb04bb57b646ee2b3a0e, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 194109312}
+    - target: {fileID: 30192081719190444, guid: dfa9bdd46ac7fb04bb57b646ee2b3a0e, type: 3}
+      propertyPath: arcHeight
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 30192081719190444, guid: dfa9bdd46ac7fb04bb57b646ee2b3a0e, type: 3}
+      propertyPath: pushImpulse
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 30192081719190444, guid: dfa9bdd46ac7fb04bb57b646ee2b3a0e, type: 3}
+      propertyPath: spinStrength
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 30192081719190444, guid: dfa9bdd46ac7fb04bb57b646ee2b3a0e, type: 3}
+      propertyPath: maxAngularVelocity
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 7036039716655484207, guid: dfa9bdd46ac7fb04bb57b646ee2b3a0e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.8571391
@@ -64143,7 +64188,7 @@ PrefabInstance:
       objectReference: {fileID: 101625468}
     - target: {fileID: 30192081719190444, guid: dfa9bdd46ac7fb04bb57b646ee2b3a0e, type: 3}
       propertyPath: pushImpulse
-      value: 35
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 7036039716655484207, guid: dfa9bdd46ac7fb04bb57b646ee2b3a0e, type: 3}
       propertyPath: m_LocalPosition.x

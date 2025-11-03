@@ -128,7 +128,14 @@ MonoBehaviour:
   fillRatePerSecond: 1
   searchInParentsIfMissing: 1
   player: {fileID: 609747784370611462, guid: 725cf0fa2b436414493be8dd5145ae7d, type: 3}
-  pushImpulse: 35
+  pushImpulse: 100
+  pushDelayOnAlreadyEmpty: 1
+  arcHeight: 0.85
+  pushCooldown: 1
+  addSpin: 1
+  spinStrength: 20
+  spinRandomness: 0.3
+  maxAngularVelocity: 50
 --- !u!1 &4402959444679823854
 GameObject:
   m_ObjectHideFlags: 0
