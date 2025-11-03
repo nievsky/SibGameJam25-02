@@ -420,8 +420,13 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EventCache
   EditorBanks:
+<<<<<<< HEAD
   - {fileID: -5877710630161941022}
   - {fileID: -5645627142052295084}
+=======
+  - {fileID: 1239965548315689500}
+  - {fileID: 2827627516536432412}
+>>>>>>> origin/dev
   EditorEvents:
   - {fileID: 4909360883403327278}
   - {fileID: -4438983098549658101}
@@ -433,11 +438,19 @@ MonoBehaviour:
   - {fileID: -1694989721625241816}
   EditorParameters: []
   MasterBanks:
+<<<<<<< HEAD
   - {fileID: -5645627142052295084}
   StringsBanks:
   - {fileID: -5877710630161941022}
   cacheVersion: 131856
   cacheTime: 638977770615827235
+=======
+  - {fileID: 2827627516536432412}
+  StringsBanks:
+  - {fileID: 1239965548315689500}
+  cacheVersion: 131856
+  cacheTime: 638977181870567963
+>>>>>>> origin/dev
   SerializableEventsDict:
   - key: event:/Speaking
     index: 0
@@ -509,6 +522,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 14400
+<<<<<<< HEAD
 --- !u!114 &4909360883403327278
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -589,6 +603,9 @@ MonoBehaviour:
   Labels: []
   Exists: 1
 --- !u!114 &7660689557463649428
+=======
+--- !u!114 &2827627516536432412
+>>>>>>> origin/dev
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -603,6 +620,84 @@ MonoBehaviour:
   Path: Assets/Scripts/Sound/FMODBank/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
+<<<<<<< HEAD
   lastModified: 638977764702233246
   FileSizes: []
   Exists: 1
+=======
+  lastModified: 638977181870567963
+  FileSizes: []
+  Exists: 1
+--- !u!114 &6940939113907994034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Speaking
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Speaking
+  Guid:
+    Data1: -1004948556
+    Data2: 1321641443
+    Data3: 932547006
+    Data4: 554974839
+  Banks:
+  - {fileID: 2827627516536432412}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 50
+  Length: 7850
+--- !u!114 &7660689557463649428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorBankRef
+  Path: Assets/Scripts/Sound/FMODBank/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 638977247883313100
+  FileSizes: []
+  Exists: 1
+--- !u!114 &7985663668805484169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Fill
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Fill
+  Guid:
+    Data1: 326540749
+    Data2: 1151269954
+    Data3: -364783950
+    Data4: -911108517
+  Banks:
+  - {fileID: 2827627516536432412}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 30
+  Length: 3312
+>>>>>>> origin/dev
