@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 1692335664097106000}
   - component: {fileID: 990667109134404432}
   - component: {fileID: 6774569118958022704}
+  - component: {fileID: 2625893562534092906}
   m_Layer: 0
   m_Name: MainMenuFMOD
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -95,3 +96,17 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20
+--- !u!114 &2625893562534092906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2570352766687267353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adbe6a7a32f6b8947bcf22c18ed2d7f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  emitter: {fileID: 990667109134404432}
+  emitter2: {fileID: 6774569118958022704}
