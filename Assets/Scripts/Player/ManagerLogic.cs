@@ -9,6 +9,9 @@ public class ManagerLogic : MonoBehaviour
     [SerializeField] private GameObject playerObject;
     [SerializeField] private float rotateSpeed = 90f;
 
+    [Header("Penalty")]
+    [SerializeField] private float drunkPenaltyOnCaught = 15f;
+    
     [Header("Visibility")]
     [SerializeField, Range(0f, 360f)] private float visibleFovDegrees = 180f;
     [SerializeField] private float visibleYawOffsetDegrees = 0f;
@@ -124,6 +127,8 @@ public class ManagerLogic : MonoBehaviour
         transform.rotation = target;
         _rotationCo = null;
     }
+    
+    
 
     private IEnumerator ConfirmDrinkingThenShowMessage()
     {
@@ -140,11 +145,24 @@ public class ManagerLogic : MonoBehaviour
             yield return null;
         }
 
-        //  Manager alarm sound (when he catches you drinking)
+        // Manager alarm sound (when he catches you drinking)
         FMODUnity.RuntimeManager.PlayOneShot("event:/Manager/ManagerAlarm", transform.position);
+
+        // Apply drunk penalty once on catch
+        ApplyDrunkPenalty();
 
         TriggerCaughtMessage();
         _drinkingCheckCo = null;
+    }
+
+    private void ApplyDrunkPenalty()
+    {
+        if (playerObject == null) return;
+
+        var drinkable = playerObject.GetComponentInChildren<Drinkable>(true);
+        if (drinkable == null) return;
+
+        drinkable.Drunk = Mathf.Max(0f, drinkable.Drunk - drunkPenaltyOnCaught);
     }
 
     private bool IsPlayerInVisibleZone()

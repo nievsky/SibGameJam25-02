@@ -27,6 +27,7 @@ public class GrabObject : MonoBehaviour
     private Transform _grabbedTf;
     private Vector3 _hitOffsetLocal;
     private RigidbodyInterpolation _initialInterpolation;
+    private RigidbodyConstraints _initialConstraints;
 
     // --- FMOD Grab Sound ---
     private const string GRAB_EVENT = "event:/Grab";
@@ -76,6 +77,9 @@ public class GrabObject : MonoBehaviour
     {
         if (_grabbedRb == null || _cam == null) return;
 
+        // prevent rotation while grabbed
+        _grabbedRb.angularVelocity = Vector3.zero;
+
         Vector3 holdPoint = _cam.transform.position + _cam.transform.forward * holdDistance;
         Vector3 centerDestination = holdPoint - _grabbedTf.TransformVector(_hitOffsetLocal);
         Vector3 toDest = centerDestination - _grabbedTf.position;
@@ -100,8 +104,13 @@ public class GrabObject : MonoBehaviour
             _grabbedTf = rb.transform;
 
             _initialInterpolation = _grabbedRb.interpolation;
+            _initialConstraints = _grabbedRb.constraints;
+
             _grabbedRb.interpolation = RigidbodyInterpolation.Interpolate;
             _grabbedRb.collisionDetectionMode = CollisionDetectionMode.Continuous;
+
+            // freeze rotation while grabbed
+            _grabbedRb.constraints |= RigidbodyConstraints.FreezeRotation;
 
             _hitOffsetLocal = hit.transform.InverseTransformVector(hit.point - hit.transform.position);
             holdDistance = Mathf.Clamp(hit.distance, 1f, maxGrabDistance);
@@ -142,6 +151,10 @@ public class GrabObject : MonoBehaviour
     private void Release()
     {
         if (_grabbedRb == null) return;
+
+        // restore original constraints and clear spin
+        _grabbedRb.constraints = _initialConstraints;
+        _grabbedRb.angularVelocity = Vector3.zero;
 
         _grabbedRb.interpolation = _initialInterpolation;
         _grabbedRb = null;
