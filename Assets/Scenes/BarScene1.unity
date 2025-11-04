@@ -2477,6 +2477,11 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4457545655111889955, guid: 41080d46d73b1a742b98086026747594, type: 3}
+--- !u!1 &36908361 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1777459185285864725, guid: e467e55ccb4629f4cb934be12d3a6352, type: 3}
+  m_PrefabInstance: {fileID: 5438980595058033303}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &46426527
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7196,7 +7201,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 194109302}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d05a4d17b1e3da046b433985acd3dfef, type: 3}
   m_Name: 
@@ -7205,7 +7210,7 @@ MonoBehaviour:
   uprightStrength: 40
   uprightDamping: 5
   maxTorque: 200
-  keepYawOnly: 0
+  keepYawOnly: 1
   positionStrength: 10
   positionDamping: 2
   maxForce: 500
@@ -7642,27 +7647,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 237310661}
   m_CullTransparentMesh: 1
---- !u!114 &237611180
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31cb1ca47dd576a4fbd1d6c7cf7c7a4a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TypeWritterRandom
-  textUI: {fileID: 0}
-  messages: []
-  letterDelay: 0.05
-  audioSource: {fileID: 0}
-  typeSound: {fileID: 0}
-  pitchVariation: 0.1
-  popWindow: {fileID: 0}
-  endDelay: 2
-  playOnEnable: 1
 --- !u!1 &247273879
 GameObject:
   m_ObjectHideFlags: 0
@@ -14450,6 +14434,103 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 537119712}
   m_SourcePrefab: {fileID: 100100000, guid: b4e4d9ca3e4591d45ac6130571e9212d, type: 3}
+--- !u!1001 &492036295
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 704622417348035796, guid: cdf09ace72834c64db19c8cd96db1495, type: 3}
+      propertyPath: m_Name
+      value: CanvasManagerAngry
+      objectReference: {fileID: 0}
+    - target: {fileID: 6622643569116135552, guid: cdf09ace72834c64db19c8cd96db1495, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6622643569116135552, guid: cdf09ace72834c64db19c8cd96db1495, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6622643569116135552, guid: cdf09ace72834c64db19c8cd96db1495, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6622643569116135552, guid: cdf09ace72834c64db19c8cd96db1495, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6622643569116135552, guid: cdf09ace72834c64db19c8cd96db1495, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6622643569116135552, guid: cdf09ace72834c64db19c8cd96db1495, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6622643569116135552, guid: cdf09ace72834c64db19c8cd96db1495, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6622643569116135552, guid: cdf09ace72834c64db19c8cd96db1495, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6622643569116135552, guid: cdf09ace72834c64db19c8cd96db1495, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6622643569116135552, guid: cdf09ace72834c64db19c8cd96db1495, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6622643569116135552, guid: cdf09ace72834c64db19c8cd96db1495, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6622643569116135552, guid: cdf09ace72834c64db19c8cd96db1495, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6622643569116135552, guid: cdf09ace72834c64db19c8cd96db1495, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6622643569116135552, guid: cdf09ace72834c64db19c8cd96db1495, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6622643569116135552, guid: cdf09ace72834c64db19c8cd96db1495, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6622643569116135552, guid: cdf09ace72834c64db19c8cd96db1495, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6622643569116135552, guid: cdf09ace72834c64db19c8cd96db1495, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6622643569116135552, guid: cdf09ace72834c64db19c8cd96db1495, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6622643569116135552, guid: cdf09ace72834c64db19c8cd96db1495, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6622643569116135552, guid: cdf09ace72834c64db19c8cd96db1495, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cdf09ace72834c64db19c8cd96db1495, type: 3}
 --- !u!1001 &496176031
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14531,6 +14612,29 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1432458157057656751, guid: e467e55ccb4629f4cb934be12d3a6352, type: 3}
   m_PrefabInstance: {fileID: 5438980595058033303}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &513377198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 36908361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40ded5412fabd07468ae3b40f77ed20d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ImpactSound
+  impactEvent:
+    Guid:
+      Data1: -1223772106
+      Data2: 1216604827
+      Data3: 490572459
+      Data4: 1034083113
+    Path: event:/FlaskHit
+  minVelocity: 0.2
+  useVelocityParameter: 1
+  velocityParameterName: Velocity
+  cooldown: 0.05
 --- !u!1 &525710340
 GameObject:
   m_ObjectHideFlags: 0
@@ -16821,7 +16925,7 @@ PrefabInstance:
     - target: {fileID: 6737896496866045751, guid: 361736a10949896499a12a3fb7d86404, type: 3}
       propertyPath: typeWritterRandom
       value: 
-      objectReference: {fileID: 237611180}
+      objectReference: {fileID: 1277535708}
     - target: {fileID: 6737896496866045751, guid: 361736a10949896499a12a3fb7d86404, type: 3}
       propertyPath: 'cups.Array.data[0]'
       value: 
@@ -22759,6 +22863,7 @@ GameObject:
   - component: {fileID: 727130842}
   - component: {fileID: 727130841}
   - component: {fileID: 727130840}
+  - component: {fileID: 727130844}
   m_Layer: 0
   m_Name: tequila (2)
   m_TagString: Dragable
@@ -22886,6 +22991,29 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 727130838}
   m_Mesh: {fileID: 5256290166758383655, guid: 0a2b996574bcf6048a1e5305c2c6e124, type: 3}
+--- !u!114 &727130844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 727130838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40ded5412fabd07468ae3b40f77ed20d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ImpactSound
+  impactEvent:
+    Guid:
+      Data1: -1981584820
+      Data2: 1148893803
+      Data3: -1678811493
+      Data4: 1591993251
+    Path: event:/BottleHit
+  minVelocity: 0.2
+  useVelocityParameter: 1
+  velocityParameterName: Velocity
+  cooldown: 0.05
 --- !u!43 &727148652
 Mesh:
   m_ObjectHideFlags: 0
@@ -30229,6 +30357,7 @@ GameObject:
   - component: {fileID: 1057222598}
   - component: {fileID: 1057222597}
   - component: {fileID: 1057222596}
+  - component: {fileID: 1057222600}
   m_Layer: 0
   m_Name: absinth (1)
   m_TagString: Dragable
@@ -30356,6 +30485,29 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1057222594}
   m_Mesh: {fileID: -1754246776524639928, guid: 0a2b996574bcf6048a1e5305c2c6e124, type: 3}
+--- !u!114 &1057222600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1057222594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40ded5412fabd07468ae3b40f77ed20d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ImpactSound
+  impactEvent:
+    Guid:
+      Data1: -1981584820
+      Data2: 1148893803
+      Data3: -1678811493
+      Data4: 1591993251
+    Path: event:/BottleHit
+  minVelocity: 0.2
+  useVelocityParameter: 1
+  velocityParameterName: Velocity
+  cooldown: 0.05
 --- !u!1 &1061352329
 GameObject:
   m_ObjectHideFlags: 0
@@ -32797,6 +32949,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8d33a04e9b23fa469d48cc1dd94a25f, type: 3}
+--- !u!114 &1277535708 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1394120786225376939, guid: cdf09ace72834c64db19c8cd96db1495, type: 3}
+  m_PrefabInstance: {fileID: 492036295}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31cb1ca47dd576a4fbd1d6c7cf7c7a4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TypeWritterRandom
 --- !u!1 &1281525701
 GameObject:
   m_ObjectHideFlags: 0
@@ -40441,6 +40604,7 @@ GameObject:
   - component: {fileID: 1529050266}
   - component: {fileID: 1529050265}
   - component: {fileID: 1529050264}
+  - component: {fileID: 1529050268}
   m_Layer: 0
   m_Name: tequila (1)
   m_TagString: Dragable
@@ -40568,6 +40732,29 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1529050262}
   m_Mesh: {fileID: 5256290166758383655, guid: 0a2b996574bcf6048a1e5305c2c6e124, type: 3}
+--- !u!114 &1529050268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1529050262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40ded5412fabd07468ae3b40f77ed20d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ImpactSound
+  impactEvent:
+    Guid:
+      Data1: -1981584820
+      Data2: 1148893803
+      Data3: -1678811493
+      Data4: 1591993251
+    Path: event:/BottleHit
+  minVelocity: 0.2
+  useVelocityParameter: 1
+  velocityParameterName: Velocity
+  cooldown: 0.05
 --- !u!1 &1531377310
 GameObject:
   m_ObjectHideFlags: 0
@@ -65875,6 +66062,7 @@ GameObject:
   - component: {fileID: 2105804189}
   - component: {fileID: 2105804188}
   - component: {fileID: 2105804187}
+  - component: {fileID: 2105804191}
   m_Layer: 0
   m_Name: koniyak (1)
   m_TagString: Dragable
@@ -66002,6 +66190,29 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2105804185}
   m_Mesh: {fileID: 8554498023653013709, guid: 0a2b996574bcf6048a1e5305c2c6e124, type: 3}
+--- !u!114 &2105804191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2105804185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40ded5412fabd07468ae3b40f77ed20d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ImpactSound
+  impactEvent:
+    Guid:
+      Data1: -1981584820
+      Data2: 1148893803
+      Data3: -1678811493
+      Data4: 1591993251
+    Path: event:/BottleHit
+  minVelocity: 0.2
+  useVelocityParameter: 1
+  velocityParameterName: Velocity
+  cooldown: 0.05
 --- !u!1 &2108561676
 GameObject:
   m_ObjectHideFlags: 0
@@ -66410,6 +66621,39 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 411a63058fe2ce74897b885607b4c6a8, type: 3}
+--- !u!1 &2140685297 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5469095715812634068, guid: a4780f252c32f54498c166935add770d, type: 3}
+  m_PrefabInstance: {fileID: 6317835773963210979}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2140685300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2140685297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8819e0eecb78bd44e96f92ee2c0d046a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DrunkController
+  volume: {fileID: 153849973}
+  player: {fileID: 750062450}
+  smoothSpeed: 4
+  wobbleAmplitude: 0.2
+  wobbleFreqMin: 1.5
+  wobbleFreqMax: 6
+  targetBloomIntensity: 12
+  targetChromaticIntensity: 1
+  targetVignetteIntensity: 0.45
+  targetVignetteColor: {r: 0.95, g: 0.85, b: 1, a: 1}
+  targetLensDistortion: -0.45
+  targetFilmGrain: 0.7
+  targetPaniniDistance: 0.9
+  targetPaniniCropToFit: 1
+  targetSaturation: -30
+  targetPostExposure: 0.6
 --- !u!23 &163566177215127281
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -67084,6 +67328,7 @@ GameObject:
   - component: {fileID: 3343048497534843084}
   - component: {fileID: 7114661352466302908}
   - component: {fileID: 7114661352466302907}
+  - component: {fileID: 7114661352466302909}
   m_Layer: 0
   m_Name: absinth
   m_TagString: Dragable
@@ -67981,6 +68226,7 @@ GameObject:
   - component: {fileID: 6604652541876703612}
   - component: {fileID: 6604652541876703614}
   - component: {fileID: 6604652541876703613}
+  - component: {fileID: 6604652541876703615}
   m_Layer: 0
   m_Name: beer
   m_TagString: Dragable
@@ -68367,7 +68613,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1777459185285864725, guid: e467e55ccb4629f4cb934be12d3a6352, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 513377198}
   m_SourcePrefab: {fileID: 100100000, guid: e467e55ccb4629f4cb934be12d3a6352, type: 3}
 --- !u!1 &5448181591552771553
 GameObject:
@@ -68382,6 +68631,7 @@ GameObject:
   - component: {fileID: 2215218809987943177}
   - component: {fileID: 5448181591552771555}
   - component: {fileID: 5448181591552771554}
+  - component: {fileID: 5448181591552771556}
   m_Layer: 0
   m_Name: tequila
   m_TagString: Dragable
@@ -68438,6 +68688,29 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &5448181591552771556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5448181591552771553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40ded5412fabd07468ae3b40f77ed20d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ImpactSound
+  impactEvent:
+    Guid:
+      Data1: -1981584820
+      Data2: 1148893803
+      Data3: -1678811493
+      Data4: 1591993251
+    Path: event:/BottleHit
+  minVelocity: 0.2
+  useVelocityParameter: 1
+  velocityParameterName: Velocity
+  cooldown: 0.05
 --- !u!1 &5675885949565079652
 GameObject:
   m_ObjectHideFlags: 0
@@ -68523,7 +68796,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5469095715812634068, guid: a4780f252c32f54498c166935add770d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2140685300}
   m_SourcePrefab: {fileID: 100100000, guid: a4780f252c32f54498c166935add770d, type: 3}
 --- !u!1 &6378638998126608653
 GameObject:
@@ -68640,6 +68916,29 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &6604652541876703615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3791768684628517966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40ded5412fabd07468ae3b40f77ed20d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ImpactSound
+  impactEvent:
+    Guid:
+      Data1: -1981584820
+      Data2: 1148893803
+      Data3: -1678811493
+      Data4: 1591993251
+    Path: event:/BottleHit
+  minVelocity: 0.2
+  useVelocityParameter: 1
+  velocityParameterName: Velocity
+  cooldown: 0.05
 --- !u!1001 &6623128087127679008
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -69138,6 +69437,29 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &7114661352466302909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1178196216207267324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40ded5412fabd07468ae3b40f77ed20d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ImpactSound
+  impactEvent:
+    Guid:
+      Data1: -1981584820
+      Data2: 1148893803
+      Data3: -1678811493
+      Data4: 1591993251
+    Path: event:/BottleHit
+  minVelocity: 0.2
+  useVelocityParameter: 1
+  velocityParameterName: Velocity
+  cooldown: 0.05
 --- !u!23 &7454481895113957310
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -69396,6 +69718,7 @@ GameObject:
   - component: {fileID: 1709414852909829245}
   - component: {fileID: 8329687166783595187}
   - component: {fileID: 8329687166783595186}
+  - component: {fileID: 8329687166783595188}
   m_Layer: 0
   m_Name: koniyak
   m_TagString: Dragable
@@ -69452,6 +69775,29 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &8329687166783595188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8329687166783595185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40ded5412fabd07468ae3b40f77ed20d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ImpactSound
+  impactEvent:
+    Guid:
+      Data1: -1981584820
+      Data2: 1148893803
+      Data3: -1678811493
+      Data4: 1591993251
+    Path: event:/BottleHit
+  minVelocity: 0.2
+  useVelocityParameter: 1
+  velocityParameterName: Velocity
+  cooldown: 0.05
 --- !u!1001 &8359724903457146626
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -69801,3 +70147,4 @@ SceneRoots:
   - {fileID: 6623128087127679008}
   - {fileID: 1396356167}
   - {fileID: 496176031}
+  - {fileID: 492036295}
