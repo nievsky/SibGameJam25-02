@@ -1,9 +1,7 @@
-// csharp
 using UnityEngine;
 using TMPro;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.SceneManagement;
 
 public class TypeWritterEffect : MonoBehaviour
 {
@@ -20,13 +18,24 @@ public class TypeWritterEffect : MonoBehaviour
     public AudioClip typeSound;
     public float pitchVariation = 0.1f;
 
-    public int SceneToLoad = 1;
+    public bool isEnded = false;
+
+    [Header("Pop Window")]
+    [SerializeField] private UIPopWindow popWindow; // child reference
 
     private Coroutine typingCoroutine;
     private bool skipCurrentTyping = false;
 
+    private void Awake()
+    {
+        // Auto-assign from children if not set in Inspector
+        if (popWindow == null)
+            popWindow = GetComponentInChildren<UIPopWindow>(true);
+    }
+
     void Start()
     {
+        popWindow.Show();
         StartTypingSequence();
     }
 
@@ -70,7 +79,11 @@ public class TypeWritterEffect : MonoBehaviour
         }
 
         yield return new WaitForSeconds(2f);
-        SceneManager.LoadScene(SceneToLoad);
+        isEnded = true;
+
+        // Hide the pop window when finished
+        if (popWindow != null)
+            popWindow.Hide();
     }
 
     private IEnumerator TypeSingleMessage(string message)

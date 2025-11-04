@@ -100,6 +100,7 @@ GameObject:
   - component: {fileID: 2367604951078524038}
   - component: {fileID: 4686925509446760897}
   - component: {fileID: 7245144099933773279}
+  - component: {fileID: 7224179010229975553}
   m_Layer: 0
   m_Name: BEEEEr3
   m_TagString: Untagged
@@ -175,6 +176,29 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.294775, y: 3.5599232, z: 3.065773}
   m_Center: {x: -0.24215221, y: 1.6258774, z: -0.39042282}
+--- !u!114 &7224179010229975553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3289939265638790072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40ded5412fabd07468ae3b40f77ed20d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ImpactSound
+  impactEvent:
+    Guid:
+      Data1: -1771887458
+      Data2: 1286770222
+      Data3: -1306081638
+      Data4: -834690903
+    Path: event:/GlassHit
+  minVelocity: 0.2
+  useVelocityParameter: 1
+  velocityParameterName: Velocity
+  cooldown: 0.05
 --- !u!1 &4390632246233942766
 GameObject:
   m_ObjectHideFlags: 0

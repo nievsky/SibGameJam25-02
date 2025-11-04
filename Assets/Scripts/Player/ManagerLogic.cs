@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class ManagerLogic : MonoBehaviour
 {
@@ -19,16 +18,43 @@ public class ManagerLogic : MonoBehaviour
     private bool ignoreVertical = true;
 
     [Header("Detection")]
-    [SerializeField, Tooltip("How long the player must keep drinking while visible before reloading.")]
+    [SerializeField, Tooltip("How long the player must keep drinking while visible before triggering the message.")]
     [Min(0f)] private float drinkingConfirmTime = 0.5f;
+
+    [Header("Caught Message")]
+    [SerializeField, Tooltip("TypeWritterRandom to play the caught message.")]
+    private TypeWritterRandom typeWritterRandom;
+    [SerializeField, TextArea(2, 4), Tooltip("Pool of messages to pick from when the player is caught.")]
+    private List<string> drinkingWarningMessages = new List<string>();
 
     private bool _playerDrinking;
     private Coroutine _rotationCo;
     private Coroutine _drinkingCheckCo;
     private CupState _lastCupState = CupState.Mixed;
-    private bool _isReloading;
+    private bool _messagePlaying;
 
     public bool PlayerDrinking => _playerDrinking;
+    
+    public bool IsPlayerVisibleNow => IsPlayerInVisibleZone();
+
+    private void Awake()
+    {
+        // Auto-assign if not set
+        if (typeWritterRandom == null)
+            typeWritterRandom = FindObjectOfType<TypeWritterRandom>(true);
+    }
+
+    private void OnEnable()
+    {
+        if (typeWritterRandom != null)
+            typeWritterRandom.Finished += OnTypewriterFinished;
+    }
+
+    private void OnDisable()
+    {
+        if (typeWritterRandom != null)
+            typeWritterRandom.Finished -= OnTypewriterFinished;
+    }
 
     private void Update()
     {
@@ -49,26 +75,33 @@ public class ManagerLogic : MonoBehaviour
                 _rotationCo = StartCoroutine(RotateYBy(180f));
             }
         }
-
         _lastCupState = state;
 
-        // Delayed scene reload: start/stop confirmation coroutine
-        if (!_isReloading)
+        // If a message is playing, suspend detection
+        if (_messagePlaying)
         {
-            bool inView = IsPlayerInVisibleZone();
-
-            if (inView && _playerDrinking)
+            if (_drinkingCheckCo != null)
             {
-                if (_drinkingCheckCo == null)
-                    _drinkingCheckCo = StartCoroutine(ConfirmDrinkingThenReload());
+                StopCoroutine(_drinkingCheckCo);
+                _drinkingCheckCo = null;
             }
-            else
+            return;
+        }
+
+        // Delayed message trigger: start/stop confirmation coroutine
+        bool inView = IsPlayerInVisibleZone();
+
+        if (inView && _playerDrinking)
+        {
+            if (_drinkingCheckCo == null)
+                _drinkingCheckCo = StartCoroutine(ConfirmDrinkingThenShowMessage());
+        }
+        else
+        {
+            if (_drinkingCheckCo != null)
             {
-                if (_drinkingCheckCo != null)
-                {
-                    StopCoroutine(_drinkingCheckCo);
-                    _drinkingCheckCo = null;
-                }
+                StopCoroutine(_drinkingCheckCo);
+                _drinkingCheckCo = null;
             }
         }
 
@@ -115,13 +148,12 @@ public class ManagerLogic : MonoBehaviour
         _rotationCo = null;
     }
 
-    // Confirmation window: require continuous visibility and drinking for 'drinkingConfirmTime'
-    private IEnumerator ConfirmDrinkingThenReload()
+    // Require continuous visibility and drinking for 'drinkingConfirmTime', then show a message
+    private IEnumerator ConfirmDrinkingThenShowMessage()
     {
         float elapsed = 0f;
         while (elapsed < drinkingConfirmTime)
         {
-            // Cancel if condition breaks during the window
             if (!_playerDrinking || !IsPlayerInVisibleZone())
             {
                 _drinkingCheckCo = null;
@@ -132,9 +164,7 @@ public class ManagerLogic : MonoBehaviour
             yield return null;
         }
 
-        if (!_isReloading)
-            ReloadCurrentScene();
-
+        TriggerCaughtMessage();
         _drinkingCheckCo = null;
     }
 
@@ -145,7 +175,6 @@ public class ManagerLogic : MonoBehaviour
 
         Vector3 toPlayer = playerObject.transform.position - transform.position;
 
-        // Prepare reference forward with yaw offset
         Vector3 forward = transform.forward;
         Quaternion yawOffset = Quaternion.Euler(0f, visibleYawOffsetDegrees, 0f);
 
@@ -163,22 +192,26 @@ public class ManagerLogic : MonoBehaviour
         return Vector3.Angle(centerDir, toPlayer) <= halfFov;
     }
 
-    private void ReloadCurrentScene()
+    private void TriggerCaughtMessage()
     {
-        _isReloading = true;
-        var scene = SceneManager.GetActiveScene();
-        SceneManager.LoadScene(scene.buildIndex);
+        _messagePlaying = true;
 
+        if (typeWritterRandom == null)
+        {
+            Debug.LogWarning("ManagerLogic: TypeWritterRandom reference is not set.");
+            _messagePlaying = false;
+            return;
+        }
 
-            // --- FMOD Cleanup before reloading ---
-            FMOD.Studio.System fmodSystem = FMODUnity.RuntimeManager.StudioSystem;
+        if (drinkingWarningMessages != null && drinkingWarningMessages.Count > 0)
+            typeWritterRandom.PlayRandomFrom(drinkingWarningMessages);
+        else
+            typeWritterRandom.Play(); // falls back to its internal list
+    }
 
-            // Flush pending commands (stops events cleanly)
-            fmodSystem.flushCommands();
-
-            // Optional: stop all sounds immediately (hard stop)
-            FMODUnity.RuntimeManager.GetBus("bus:/").stopAllEvents(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-
+    private void OnTypewriterFinished()
+    {
+        _messagePlaying = false;
     }
 
     // More robust: search in player and children, allow non-public members, and common name variants.
@@ -194,13 +227,11 @@ public class ManagerLogic : MonoBehaviour
             if (m == null) continue;
             var t = m.GetType();
 
-            // Prefer field lookup
             var field = t.GetField("Drinking", flags)
                         ?? t.GetField("isDrinking", flags);
             if (field != null && TryConvertToBool(field.GetValue(m), out drinking))
                 return true;
 
-            // Fallback to property lookup
             var prop = t.GetProperty("Drinking", flags)
                        ?? t.GetProperty("IsDrinking", flags);
             if (prop != null && prop.CanRead && TryConvertToBool(prop.GetValue(m), out drinking))
@@ -244,7 +275,6 @@ public class ManagerLogic : MonoBehaviour
 #if UNITY_EDITOR
     private void OnDrawGizmosSelected()
     {
-        // Visualize the FOV with yaw offset in the Scene view
         Gizmos.color = Color.yellow;
         float halfFov = Mathf.Clamp(visibleFovDegrees, 0f, 360f) * 0.5f;
 
