@@ -1,11 +1,13 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using FMODUnity;
+using FMOD.Studio;
 
 public class GrabObject : MonoBehaviour
 {
     [Header("Input (new Input System)")]
-    public InputActionReference grabAction; // Bind to Mouse/leftButton
-    public InputActionReference pushAction; // Bind to Mouse/rightButton
+    public InputActionReference grabAction;
+    public InputActionReference pushAction;
 
     [Header("Grabbing")]
     [SerializeField] private LayerMask grabLayer = ~0;
@@ -26,6 +28,9 @@ public class GrabObject : MonoBehaviour
     private Vector3 _hitOffsetLocal;
     private RigidbodyInterpolation _initialInterpolation;
 
+    // --- FMOD Grab Sound ---
+    private const string GRAB_EVENT = "event:/Grab";
+
     private void Awake()
     {
         EnsureCamera();
@@ -37,8 +42,8 @@ public class GrabObject : MonoBehaviour
 
         if (grabAction != null)
         {
-            grabAction.action.started += OnGrabStarted;   // Button press
-            grabAction.action.canceled += OnGrabCanceled; // Button release
+            grabAction.action.started += OnGrabStarted;
+            grabAction.action.canceled += OnGrabCanceled;
             grabAction.action.Enable();
         }
 
@@ -71,18 +76,12 @@ public class GrabObject : MonoBehaviour
     {
         if (_grabbedRb == null || _cam == null) return;
 
-        // Target point in front of camera
         Vector3 holdPoint = _cam.transform.position + _cam.transform.forward * holdDistance;
-
-        // Keep the clicked point on the object at the holdPoint
         Vector3 centerDestination = holdPoint - _grabbedTf.TransformVector(_hitOffsetLocal);
         Vector3 toDest = centerDestination - _grabbedTf.position;
-
-        // Velocity change needed this frame (scaled by followStrength)
         Vector3 velChange = toDest / Time.fixedDeltaTime * Mathf.Clamp01(followStrength);
 
-        // Drive toward the target smoothly
-        _grabbedRb.linearVelocity = Vector3.zero; // fixed: use velocity, not linearVelocity
+        _grabbedRb.linearVelocity = Vector3.zero;
         _grabbedRb.AddForce(velChange, ForceMode.VelocityChange);
     }
 
@@ -104,11 +103,11 @@ public class GrabObject : MonoBehaviour
             _grabbedRb.interpolation = RigidbodyInterpolation.Interpolate;
             _grabbedRb.collisionDetectionMode = CollisionDetectionMode.Continuous;
 
-            // Keep the exact point you clicked aligned to the hold point
             _hitOffsetLocal = hit.transform.InverseTransformVector(hit.point - hit.transform.position);
-
-            // Start holding at the hit distance (feels natural)
             holdDistance = Mathf.Clamp(hit.distance, 1f, maxGrabDistance);
+
+            // --- Play FMOD Grab Sound (3D) ---
+            RuntimeManager.PlayOneShot(GRAB_EVENT, hit.point);
         }
     }
 
@@ -122,7 +121,6 @@ public class GrabObject : MonoBehaviour
         EnsureCamera();
         if (_cam == null) return;
 
-        // If holding something, punt it and drop
         if (_grabbedRb != null)
         {
             _grabbedRb.AddForce(_cam.transform.forward * pushForce, ForceMode.VelocityChange);
@@ -130,7 +128,6 @@ public class GrabObject : MonoBehaviour
             return;
         }
 
-        // Otherwise, push what is in the crosshair within range
         Ray ray = _cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
         if (Physics.Raycast(ray, out var hit, maxGrabDistance, grabLayer, QueryTriggerInteraction.Ignore))
         {

@@ -108,6 +108,33 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &-6159295653699121604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Grab
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Grab
+  Guid:
+    Data1: -444929707
+    Data2: 1161294373
+    Data3: -465832536
+    Data4: 1007770014
+  Banks:
+  - {fileID: 2827627516536432412}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 233
 --- !u!114 &-5916520575329321583
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -300,6 +327,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 50
   Length: 90000
+--- !u!114 &-3827034259365017119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/CashRegisterHit/Velocity
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
+  Name: Velocity
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 580246176
+    data2: 4274481683
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &-2874888723849220471
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -538,13 +589,15 @@ MonoBehaviour:
   - {fileID: 1271470098789090432}
   - {fileID: -1032314249973626670}
   - {fileID: 7995575082220948152}
+  - {fileID: 3838342710751459534}
+  - {fileID: -6159295653699121604}
   EditorParameters: []
   MasterBanks:
   - {fileID: 2827627516536432412}
   StringsBanks:
   - {fileID: 1239965548315689500}
   cacheVersion: 131856
-  cacheTime: 638978553643871718
+  cacheTime: 638978605921468828
   SerializableEventsDict:
   - key: event:/Crowd
     index: 0
@@ -699,10 +752,10 @@ MonoBehaviour:
   Path: Assets/Scripts/Sound/FMODBank/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638978553643871718
+  lastModified: 638978605921468828
   FileSizes:
   - Name: 
-    Value: 1766
+    Value: 1852
   Exists: 1
 --- !u!114 &1271470098789090432
 MonoBehaviour:
@@ -879,7 +932,7 @@ MonoBehaviour:
   Path: Assets/Scripts/Sound/FMODBank/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638978553643841694
+  lastModified: 638978605921418783
   FileSizes: []
   Exists: 1
 --- !u!114 &2829362275504016089
@@ -984,6 +1037,34 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 40
   Length: 1437
+--- !u!114 &3838342710751459534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/GlassHit
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/GlassHit
+  Guid:
+    Data1: -1771887458
+    Data2: 1286770222
+    Data3: -1306081638
+    Data4: -834690903
+  Banks:
+  - {fileID: 2827627516536432412}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 6115661872881669132}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 372
 --- !u!114 &3872726492254340053
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1140,6 +1221,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1437
+--- !u!114 &6115661872881669132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/GlassHit/Velocity
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
+  Name: Velocity
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 580246176
+    data2: 4274481683
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &6263515145719129932
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1163,7 +1268,8 @@ MonoBehaviour:
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
-  Parameters: []
+  Parameters:
+  - {fileID: -3827034259365017119}
   MinDistance: 1
   MaxDistance: 20
   Length: 536
