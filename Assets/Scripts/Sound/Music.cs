@@ -17,6 +17,12 @@ public class BandPerformanceManager : MonoBehaviour
 
     void Start()
     {
+        var menuMusic = GameObject.FindWithTag("MenuMusic");
+        if (menuMusic != null)
+        {
+            Destroy(menuMusic);
+        }
+
         StartCoroutine(PerformanceLoop());
     }
 

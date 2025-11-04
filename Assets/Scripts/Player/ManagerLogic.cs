@@ -7,25 +7,19 @@ public class ManagerLogic : MonoBehaviour
 {
     [SerializeField] private List<SuckCup> cups = new List<SuckCup>();
     [SerializeField] private GameObject playerObject;
-    [SerializeField] private float rotateSpeed = 90f; // degrees per second
+    [SerializeField] private float rotateSpeed = 90f;
 
     [Header("Visibility")]
-    [SerializeField, Range(0f, 360f)]
-    private float visibleFovDegrees = 180f; // total FOV angle
-    [SerializeField, Tooltip("Yaw offset (deg) of the view cone relative to forward. + turns right, - left.")]
-    private float visibleYawOffsetDegrees = 0f;
-    [SerializeField, Tooltip("Ignore vertical when checking visibility.")]
-    private bool ignoreVertical = true;
+    [SerializeField, Range(0f, 360f)] private float visibleFovDegrees = 180f;
+    [SerializeField] private float visibleYawOffsetDegrees = 0f;
+    [SerializeField] private bool ignoreVertical = true;
 
     [Header("Detection")]
-    [SerializeField, Tooltip("How long the player must keep drinking while visible before triggering the message.")]
-    [Min(0f)] private float drinkingConfirmTime = 0.5f;
+    [SerializeField] private float drinkingConfirmTime = 0.5f;
 
     [Header("Caught Message")]
-    [SerializeField, Tooltip("TypeWritterRandom to play the caught message.")]
-    private TypeWritterRandom typeWritterRandom;
-    [SerializeField, TextArea(2, 4), Tooltip("Pool of messages to pick from when the player is caught.")]
-    private List<string> drinkingWarningMessages = new List<string>();
+    [SerializeField] private TypeWritterRandom typeWritterRandom;
+    [SerializeField, TextArea(2, 4)] private List<string> drinkingWarningMessages = new List<string>();
 
     private bool _playerDrinking;
     private Coroutine _rotationCo;
@@ -34,12 +28,10 @@ public class ManagerLogic : MonoBehaviour
     private bool _messagePlaying;
 
     public bool PlayerDrinking => _playerDrinking;
-    
     public bool IsPlayerVisibleNow => IsPlayerInVisibleZone();
 
     private void Awake()
     {
-        // Auto-assign if not set
         if (typeWritterRandom == null)
             typeWritterRandom = FindObjectOfType<TypeWritterRandom>(true);
     }
@@ -58,26 +50,22 @@ public class ManagerLogic : MonoBehaviour
 
     private void Update()
     {
-        // Update Player.Drinking each frame; default to false if not found
         _playerDrinking = TryGetPlayerDrinking(playerObject, out var drinking) && drinking;
-
         var state = GetCupState();
 
-        // Trigger only on state changes and when not already rotating
         if (_rotationCo == null && state != _lastCupState)
         {
-            if (state == CupState.AllEmpty)
+            if (state == CupState.AllEmpty || state == CupState.AllFull)
             {
-                _rotationCo = StartCoroutine(RotateYBy(180f));
-            }
-            else if (state == CupState.AllFull)
-            {
+                //  Play manager alert sound right before he starts to spin
+                FMODUnity.RuntimeManager.PlayOneShot("event:/Manager/ManagerAlert", transform.position);
+
                 _rotationCo = StartCoroutine(RotateYBy(180f));
             }
         }
+
         _lastCupState = state;
 
-        // If a message is playing, suspend detection
         if (_messagePlaying)
         {
             if (_drinkingCheckCo != null)
@@ -88,9 +76,7 @@ public class ManagerLogic : MonoBehaviour
             return;
         }
 
-        // Delayed message trigger: start/stop confirmation coroutine
         bool inView = IsPlayerInVisibleZone();
-
         if (inView && _playerDrinking)
         {
             if (_drinkingCheckCo == null)
@@ -104,9 +90,6 @@ public class ManagerLogic : MonoBehaviour
                 _drinkingCheckCo = null;
             }
         }
-
-        Debug.Log("Is player drinking: " + _playerDrinking);
-        Debug.Log("Is player in visible zone: " + IsPlayerInVisibleZone());
     }
 
     private enum CupState { AllEmpty, AllFull, Mixed }
@@ -115,20 +98,18 @@ public class ManagerLogic : MonoBehaviour
     {
         if (cups == null || cups.Count == 0) return CupState.Mixed;
 
-        bool anyNull = false;
         bool anyEmpty = false;
         bool anyFull = false;
 
         foreach (var cup in cups)
         {
-            if (cup == null) { anyNull = true; break; }
+            if (cup == null) return CupState.Mixed;
             if (cup.isEmpty) anyEmpty = true; else anyFull = true;
             if (anyEmpty && anyFull) break;
         }
 
-        if (anyNull) return CupState.Mixed;
-        if (anyEmpty && !anyFull) return CupState.AllEmpty;   // all isEmpty == true
-        if (!anyEmpty && anyFull) return CupState.AllFull;    // all isEmpty == false
+        if (anyEmpty && !anyFull) return CupState.AllEmpty;
+        if (!anyEmpty && anyFull) return CupState.AllFull;
         return CupState.Mixed;
     }
 
@@ -137,18 +118,13 @@ public class ManagerLogic : MonoBehaviour
         var target = transform.rotation * Quaternion.Euler(0f, degrees, 0f);
         while (Quaternion.Angle(transform.rotation, target) > 0.1f)
         {
-            transform.rotation = Quaternion.RotateTowards(
-                transform.rotation,
-                target,
-                rotateSpeed * Time.deltaTime
-            );
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, target, rotateSpeed * Time.deltaTime);
             yield return null;
         }
         transform.rotation = target;
         _rotationCo = null;
     }
 
-    // Require continuous visibility and drinking for 'drinkingConfirmTime', then show a message
     private IEnumerator ConfirmDrinkingThenShowMessage()
     {
         float elapsed = 0f;
@@ -164,17 +140,17 @@ public class ManagerLogic : MonoBehaviour
             yield return null;
         }
 
+        //  Manager alarm sound (when he catches you drinking)
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Manager/ManagerAlarm", transform.position);
+
         TriggerCaughtMessage();
         _drinkingCheckCo = null;
     }
 
-    // Check if player is inside the forward FOV cone with yaw offset
     private bool IsPlayerInVisibleZone()
     {
         if (playerObject == null) return false;
-
         Vector3 toPlayer = playerObject.transform.position - transform.position;
-
         Vector3 forward = transform.forward;
         Quaternion yawOffset = Quaternion.Euler(0f, visibleYawOffsetDegrees, 0f);
 
@@ -188,7 +164,6 @@ public class ManagerLogic : MonoBehaviour
 
         Vector3 centerDir = (yawOffset * forward).normalized;
         float halfFov = Mathf.Clamp(visibleFovDegrees, 0f, 360f) * 0.5f;
-
         return Vector3.Angle(centerDir, toPlayer) <= halfFov;
     }
 
@@ -206,7 +181,7 @@ public class ManagerLogic : MonoBehaviour
         if (drinkingWarningMessages != null && drinkingWarningMessages.Count > 0)
             typeWritterRandom.PlayRandomFrom(drinkingWarningMessages);
         else
-            typeWritterRandom.Play(); // falls back to its internal list
+            typeWritterRandom.Play();
     }
 
     private void OnTypewriterFinished()
@@ -214,7 +189,6 @@ public class ManagerLogic : MonoBehaviour
         _messagePlaying = false;
     }
 
-    // More robust: search in player and children, allow non-public members, and common name variants.
     private static bool TryGetPlayerDrinking(GameObject player, out bool drinking)
     {
         drinking = false;
@@ -245,30 +219,10 @@ public class ManagerLogic : MonoBehaviour
     {
         switch (value)
         {
-            case bool b:
-                result = b; return true;
-            case int i:
-                result = i != 0; return true;
-            case float f:
-                result = Mathf.Abs(f) > Mathf.Epsilon; return true;
-            case double d:
-                result = Mathf.Abs((float)d) > Mathf.Epsilon; return true;
-            case byte b8:
-                result = b8 != 0; return true;
-            case sbyte sb:
-                result = sb != 0; return true;
-            case short s:
-                result = s != 0; return true;
-            case ushort us:
-                result = us != 0; return true;
-            case uint ui:
-                result = ui != 0; return true;
-            case long l:
-                result = l != 0; return true;
-            case ulong ul:
-                result = ul != 0; return true;
-            default:
-                result = false; return false;
+            case bool b: result = b; return true;
+            case int i: result = i != 0; return true;
+            case float f: result = Mathf.Abs(f) > Mathf.Epsilon; return true;
+            default: result = false; return false;
         }
     }
 
@@ -282,11 +236,11 @@ public class ManagerLogic : MonoBehaviour
         Vector3 baseForward = transform.forward;
         if (ignoreVertical) baseForward = new Vector3(baseForward.x, 0f, baseForward.z).normalized;
 
-        Vector3 leftDir  = Quaternion.Euler(0f, visibleYawOffsetDegrees - halfFov, 0f) * baseForward;
+        Vector3 leftDir = Quaternion.Euler(0f, visibleYawOffsetDegrees - halfFov, 0f) * baseForward;
         Vector3 rightDir = Quaternion.Euler(0f, visibleYawOffsetDegrees + halfFov, 0f) * baseForward;
-        Vector3 center   = Quaternion.Euler(0f, visibleYawOffsetDegrees, 0f) * baseForward;
+        Vector3 center = Quaternion.Euler(0f, visibleYawOffsetDegrees, 0f) * baseForward;
 
-        float rayLen = 2.0f;
+        float rayLen = 2f;
         Gizmos.DrawRay(origin, center * rayLen);
         Gizmos.DrawRay(origin, leftDir * rayLen);
         Gizmos.DrawRay(origin, rightDir * rayLen);
