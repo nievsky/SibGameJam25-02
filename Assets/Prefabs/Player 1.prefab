@@ -282,8 +282,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d96330e0621e754caa0312681ea4db3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GrabObject
-  grabAction: {fileID: 0}
-  pushAction: {fileID: 0}
+  grabAction: {fileID: 1120369429361536294, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  pushAction: {fileID: -112095064302201197, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   grabLayer:
     serializedVersion: 2
     m_Bits: 4294967295
