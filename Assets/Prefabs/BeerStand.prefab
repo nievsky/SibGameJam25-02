@@ -136,6 +136,7 @@ MonoBehaviour:
   spinStrength: 20
   spinRandomness: 0.3
   maxAngularVelocity: 50
+  isEmpty: 1
 --- !u!1 &4402959444679823854
 GameObject:
   m_ObjectHideFlags: 0
@@ -164,8 +165,8 @@ Transform:
   m_GameObject: {fileID: 4402959444679823854}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.88, z: 0}
-  m_LocalScale: {x: 0.028763758, y: 0.028763764, z: 0.028763758}
+  m_LocalPosition: {x: 0, y: 0.68, z: 0}
+  m_LocalScale: {x: 0.020167792, y: 0.020167794, z: 0.020167792}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7036039716655484207}
@@ -273,7 +274,7 @@ Transform:
   m_GameObject: {fileID: 5089952978586908983}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 4.97, z: 0}
+  m_LocalPosition: {x: 0, y: 6.32, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

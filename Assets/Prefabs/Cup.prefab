@@ -218,6 +218,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: beer
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 46c1130406ad82b449d229acf3a295ac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
