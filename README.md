@@ -6,3 +6,6 @@
   * Fast Script Reload 1.6.1
   * Cinemachine 3.1.5
   * ProBuilder 6.0.7
+
+Final build:
+https://ziesel69.itch.io/shchdrunk
