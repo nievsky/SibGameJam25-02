@@ -591,13 +591,15 @@ MonoBehaviour:
   - {fileID: 7995575082220948152}
   - {fileID: 3838342710751459534}
   - {fileID: -6159295653699121604}
+  - {fileID: 3626635190776349613}
+  - {fileID: 8731632786304995703}
   EditorParameters: []
   MasterBanks:
   - {fileID: 2827627516536432412}
   StringsBanks:
   - {fileID: 1239965548315689500}
   cacheVersion: 131856
-  cacheTime: 638978605921468828
+  cacheTime: 638978641897742198
   SerializableEventsDict:
   - key: event:/Crowd
     index: 0
@@ -631,14 +633,18 @@ MonoBehaviour:
     index: 14
   - key: snapshot:/Paused
     index: 15
-  - key: event:/MainMenu/MainMenuAmbience
+  - key: event:/MainMenu/MainMenuMusic
     index: 16
-  - key: event:/Grab
+  - key: event:/MainMenu/MainMenuAmbience
     index: 17
   - key: event:/GlassHit
     index: 18
-  - key: event:/MainMenu/MainMenuMusic
+  - key: event:/Grab
     index: 19
+  - key: event:/Manager/ManagerAlarm
+    index: 20
+  - key: event:/Manager/ManagerAlert
+    index: 21
 --- !u!114 &39438484795676614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -760,10 +766,10 @@ MonoBehaviour:
   Path: Assets/Scripts/Sound/FMODBank/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638978605921468828
+  lastModified: 638978641897742198
   FileSizes:
   - Name: 
-    Value: 1852
+    Value: 1946
   Exists: 1
 --- !u!114 &1271470098789090432
 MonoBehaviour:
@@ -940,7 +946,7 @@ MonoBehaviour:
   Path: Assets/Scripts/Sound/FMODBank/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638978605921418783
+  lastModified: 638978641897692158
   FileSizes: []
   Exists: 1
 --- !u!114 &2829362275504016089
@@ -1018,6 +1024,33 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &3626635190776349613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Manager/ManagerAlarm
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Manager/ManagerAlarm
+  Guid:
+    Data1: -488919250
+    Data2: 1320313512
+    Data3: 362013333
+    Data4: -639618903
+  Banks:
+  - {fileID: 2827627516536432412}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 878
 --- !u!114 &3691303301076342806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1433,6 +1466,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 19200
+--- !u!114 &8731632786304995703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Manager/ManagerAlert
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Manager/ManagerAlert
+  Guid:
+    Data1: -777352101
+    Data2: 1294622983
+    Data3: 931548322
+    Data4: -1986684874
+  Banks:
+  - {fileID: 2827627516536432412}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 40
+  Length: 684
 --- !u!114 &8962096477686848948
 MonoBehaviour:
   m_ObjectHideFlags: 0
