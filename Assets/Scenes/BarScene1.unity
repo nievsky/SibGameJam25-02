@@ -73796,6 +73796,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4807219428079156616, guid: 3d576a8d74c14ea43b0b0f90f7778ef8, type: 3}
+      propertyPath: maxScale
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4807219428079156616, guid: 3d576a8d74c14ea43b0b0f90f7778ef8, type: 3}
       propertyPath: drinkable
       value: 
       objectReference: {fileID: 750062450}
