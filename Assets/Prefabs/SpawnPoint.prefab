@@ -237,7 +237,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e821579429148684bb952424a4d0511d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnObjectsAt
-  prefabToSpawn: {fileID: 4676939997810896100, guid: 87de06f315dfb6b458c4883acbe8771b, type: 3}
+  prefabToSpawn: {fileID: 8614947894688712854, guid: 5d4866b3fb921ac4e8949563ab5fa9bb, type: 3}
   spawnPoint: {fileID: 3888798815691868267}
   spawnInterval: 2
   spawnRadius: 0.25
