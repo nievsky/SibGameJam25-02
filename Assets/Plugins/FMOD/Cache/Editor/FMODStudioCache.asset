@@ -514,7 +514,7 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: 1239965548315689500}
   cacheVersion: 131856
-  cacheTime: 638978019146520813
+  cacheTime: 638978549252510116
   SerializableEventsDict:
   - key: event:/Crowd
     index: 0
@@ -548,6 +548,14 @@ MonoBehaviour:
     index: 14
   - key: snapshot:/Paused
     index: 15
+  - key: event:/MainMenu/MainMenuAmbience
+    index: 16
+  - key: event:/Grab
+    index: 17
+  - key: event:/GlassHit
+    index: 18
+  - key: event:/MainMenu/MainMenuMusic
+    index: 19
 --- !u!114 &39438484795676614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -669,7 +677,7 @@ MonoBehaviour:
   Path: Assets/Scripts/Sound/FMODBank/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638978009996489943
+  lastModified: 638978549252510116
   FileSizes:
   - Name: 
     Value: 1612
@@ -849,7 +857,7 @@ MonoBehaviour:
   Path: Assets/Scripts/Sound/FMODBank/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638978019146520813
+  lastModified: 638978549252500056
   FileSizes: []
   Exists: 1
 --- !u!114 &2829548747759617186

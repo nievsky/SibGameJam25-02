@@ -1262,6 +1262,12 @@ MonoBehaviour:
   cups: []
   playerObject: {fileID: 0}
   rotateSpeed: 90
+  visibleFovDegrees: 180
+  visibleYawOffsetDegrees: 0
+  ignoreVertical: 1
+  drinkingConfirmTime: 0.5
+  typeWritterRandom: {fileID: 0}
+  drinkingWarningMessages: []
 --- !u!1 &7957825315247468350
 GameObject:
   m_ObjectHideFlags: 0
