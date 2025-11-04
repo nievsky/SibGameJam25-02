@@ -5124,6 +5124,14 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 101625468}
+    - target: {fileID: 30192081719190444, guid: dfa9bdd46ac7fb04bb57b646ee2b3a0e, type: 3}
+      propertyPath: fillRatePerSecond
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 30192081719190444, guid: dfa9bdd46ac7fb04bb57b646ee2b3a0e, type: 3}
+      propertyPath: searchInParentsIfMissing
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2883983531916407106, guid: dfa9bdd46ac7fb04bb57b646ee2b3a0e, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -12620,6 +12628,17 @@ MonoBehaviour:
   useVelocityParameter: 1
   velocityParameterName: Velocity
   cooldown: 0.05
+--- !u!114 &373183183 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 30192081719190444, guid: dfa9bdd46ac7fb04bb57b646ee2b3a0e, type: 3}
+  m_PrefabInstance: {fileID: 1091621715}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc2618ccbc5bdf141b8941353268e178, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SuckCup
 --- !u!1 &374797589
 GameObject:
   m_ObjectHideFlags: 0
@@ -17119,7 +17138,7 @@ PrefabInstance:
       objectReference: {fileID: 1654682322}
     - target: {fileID: 6737896496866045751, guid: 361736a10949896499a12a3fb7d86404, type: 3}
       propertyPath: cups.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6737896496866045751, guid: 361736a10949896499a12a3fb7d86404, type: 3}
       propertyPath: typeWritterRandom
@@ -17129,6 +17148,18 @@ PrefabInstance:
       propertyPath: 'cups.Array.data[0]'
       value: 
       objectReference: {fileID: 1968424357}
+    - target: {fileID: 6737896496866045751, guid: 361736a10949896499a12a3fb7d86404, type: 3}
+      propertyPath: 'cups.Array.data[1]'
+      value: 
+      objectReference: {fileID: 373183183}
+    - target: {fileID: 6737896496866045751, guid: 361736a10949896499a12a3fb7d86404, type: 3}
+      propertyPath: 'cups.Array.data[2]'
+      value: 
+      objectReference: {fileID: 373183183}
+    - target: {fileID: 6737896496866045751, guid: 361736a10949896499a12a3fb7d86404, type: 3}
+      propertyPath: drunkPenaltyOnCaught
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 6737896496866045751, guid: 361736a10949896499a12a3fb7d86404, type: 3}
       propertyPath: visibleYawOffsetDegrees
       value: -90
@@ -23617,10 +23648,10 @@ MonoBehaviour:
   interactAction: {fileID: 1781555164194001046, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   slider: {fileID: 1288481151}
   interactDistance: 5
-  drunkRatePerSecond: 10
+  drunkRatePerSecond: 4
   drinkTag: Dragable
   Drunk: 0
-  DrunkDecreaser: 1
+  DrunkDecreaser: 0.25
 --- !u!114 &750062451
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35987,8 +36018,16 @@ PrefabInstance:
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 30192081719190444, guid: dfa9bdd46ac7fb04bb57b646ee2b3a0e, type: 3}
+      propertyPath: fillRatePerSecond
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 30192081719190444, guid: dfa9bdd46ac7fb04bb57b646ee2b3a0e, type: 3}
       propertyPath: maxAngularVelocity
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 30192081719190444, guid: dfa9bdd46ac7fb04bb57b646ee2b3a0e, type: 3}
+      propertyPath: searchInParentsIfMissing
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2404996338538335958, guid: dfa9bdd46ac7fb04bb57b646ee2b3a0e, type: 3}
       propertyPath: m_Enabled
@@ -37650,8 +37689,16 @@ PrefabInstance:
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 30192081719190444, guid: dfa9bdd46ac7fb04bb57b646ee2b3a0e, type: 3}
+      propertyPath: fillRatePerSecond
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 30192081719190444, guid: dfa9bdd46ac7fb04bb57b646ee2b3a0e, type: 3}
       propertyPath: maxAngularVelocity
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 30192081719190444, guid: dfa9bdd46ac7fb04bb57b646ee2b3a0e, type: 3}
+      propertyPath: searchInParentsIfMissing
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2883983531916407106, guid: dfa9bdd46ac7fb04bb57b646ee2b3a0e, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -73269,6 +73316,14 @@ PrefabInstance:
     - target: {fileID: 30192081719190444, guid: dfa9bdd46ac7fb04bb57b646ee2b3a0e, type: 3}
       propertyPath: pushImpulse
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 30192081719190444, guid: dfa9bdd46ac7fb04bb57b646ee2b3a0e, type: 3}
+      propertyPath: fillRatePerSecond
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 30192081719190444, guid: dfa9bdd46ac7fb04bb57b646ee2b3a0e, type: 3}
+      propertyPath: searchInParentsIfMissing
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2883983531916407106, guid: dfa9bdd46ac7fb04bb57b646ee2b3a0e, type: 3}
       propertyPath: m_StaticEditorFlags
