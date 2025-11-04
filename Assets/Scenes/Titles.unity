@@ -127,10 +127,58 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 162174873886383754, guid: 79ae827d03dd05c4898e374f7cd07e72, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 162174873886383754, guid: 79ae827d03dd05c4898e374f7cd07e72, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 162174873886383754, guid: 79ae827d03dd05c4898e374f7cd07e72, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 900
+      objectReference: {fileID: 0}
+    - target: {fileID: 162174873886383754, guid: 79ae827d03dd05c4898e374f7cd07e72, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 162174873886383754, guid: 79ae827d03dd05c4898e374f7cd07e72, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 500
+      objectReference: {fileID: 0}
     - target: {fileID: 1196276870442123886, guid: 79ae827d03dd05c4898e374f7cd07e72, type: 3}
       propertyPath: m_Texture
       value: 
-      objectReference: {fileID: 2800000, guid: 2d54095eed9def049afa9b61ff0fafc9, type: 3}
+      objectReference: {fileID: 2800000, guid: 4e70bc95b8bb16240bf32d8c1d2bfcb1, type: 3}
+    - target: {fileID: 3331506209182281726, guid: 79ae827d03dd05c4898e374f7cd07e72, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3331506209182281726, guid: 79ae827d03dd05c4898e374f7cd07e72, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3331506209182281726, guid: 79ae827d03dd05c4898e374f7cd07e72, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3331506209182281726, guid: 79ae827d03dd05c4898e374f7cd07e72, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3331506209182281726, guid: 79ae827d03dd05c4898e374f7cd07e72, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 3331506209182281726, guid: 79ae827d03dd05c4898e374f7cd07e72, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 1080
+      objectReference: {fileID: 0}
+    - target: {fileID: 3694261681571903650, guid: 79ae827d03dd05c4898e374f7cd07e72, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3880038139894223819, guid: 79ae827d03dd05c4898e374f7cd07e72, type: 3}
       propertyPath: m_Name
       value: EndScenePref
