@@ -621,13 +621,13 @@ MonoBehaviour:
   - {fileID: -8369988781457438107}
   - {fileID: 2707325474575861724}
   EditorParameters:
-  - {fileID: 6866623648244524110}
+  - {fileID: 366009487139718525}
   MasterBanks:
   - {fileID: 2827627516536432412}
   StringsBanks:
   - {fileID: 1239965548315689500}
   cacheVersion: 131856
-  cacheTime: 638978740868281168
+  cacheTime: 638978696811610152
   SerializableEventsDict:
   - key: event:/Crowd
     index: 0
@@ -727,6 +727,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 14400
+--- !u!114 &366009487139718525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Drunk
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
+  Name: Drunk
+  StudioPath: parameter:/Drunk
+  Min: 0
+  Max: 100
+  Default: 0
+  ID:
+    data1: 573118943
+    data2: 1448109719
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &581623632132465061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -794,7 +818,7 @@ MonoBehaviour:
   Path: Assets/Scripts/Sound/FMODBank/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638978740868281168
+  lastModified: 638978636042331273
   FileSizes:
   - Name: 
     Value: 1946
@@ -1001,7 +1025,7 @@ MonoBehaviour:
   Path: Assets/Scripts/Sound/FMODBank/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638978740868221123
+  lastModified: 638978696811610152
   FileSizes: []
   Exists: 1
 --- !u!114 &2829362275504016089
