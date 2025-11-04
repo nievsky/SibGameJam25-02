@@ -73809,7 +73809,7 @@ PrefabInstance:
       objectReference: {fileID: 750062450}
     - target: {fileID: 8222693751945138083, guid: 3d576a8d74c14ea43b0b0f90f7778ef8, type: 3}
       propertyPath: lowDrunkScene
-      value: EndScene
+      value: EndScene3
       objectReference: {fileID: 0}
     - target: {fileID: 8222693751945138083, guid: 3d576a8d74c14ea43b0b0f90f7778ef8, type: 3}
       propertyPath: highDrunkScene
@@ -73817,7 +73817,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8222693751945138083, guid: 3d576a8d74c14ea43b0b0f90f7778ef8, type: 3}
       propertyPath: mediumDrunkScene
-      value: EndScene
+      value: EndScene2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
