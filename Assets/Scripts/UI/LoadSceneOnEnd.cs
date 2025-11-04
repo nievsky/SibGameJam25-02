@@ -14,7 +14,7 @@ public class LoadSceneOnEnd : MonoBehaviour
     {
         if (endsScene.isEnded)
         {
-            UnityEngine.SceneManagement.SceneManager.LoadScene(6);
+            UnityEngine.SceneManagement.SceneManager.LoadScene(5);
         }
     }
     
