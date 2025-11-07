@@ -16,9 +16,17 @@ public class GeneralCamera : MonoBehaviour
     [SerializeField] private float Sensitivity = 10f;
     [SerializeField] private Transform playerBody;
     [SerializeField] private Slider mouseSensitivity;
+    public int targetFPS = 60;
     public bool lockCursor = true;
     private float xRotation = 0f;
+    
 
+    private void Awake()
+    {
+        QualitySettings.vSyncCount = 1;
+        Application.targetFrameRate = targetFPS;
+    }
+    
     private void Start()
     {
         if (lockCursor)
